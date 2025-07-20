@@ -6,8 +6,7 @@ const gifts = [
         description: "Serve pra acalmar o coração, ou pelo menos esquentar a mão enquanto espera o cerimonial.",
         price: 25,
         category: "preparacao",
-        image: "cha.png",
-        paymentLink: ""
+        image: "cha.png"
     },
     {
         id: 2,
@@ -16,7 +15,6 @@ const gifts = [
         price: 50,
         category: "casa-nova",
         image: "dogo.png",
-        paymentLink: ""
     },
     {
         id: 3,
@@ -25,7 +23,6 @@ const gifts = [
         price: 75,
         category: "preparacao",
         image: "choro.png",
-        paymentLink: ""
     },
     {
         id: 4,
@@ -34,7 +31,6 @@ const gifts = [
         price: 100,
         category: "casa-nova",
         image: "nuggets.png",
-        paymentLink: ""
     },
     {
         id: 5,
@@ -43,7 +39,6 @@ const gifts = [
         price: 125,
         category: "preparacao",
         image: "maracuja.png",
-        paymentLink: ""
     },
     {
         id: 6,
@@ -52,7 +47,6 @@ const gifts = [
         price: 150,
         category: "casa-nova",
         image: "tampao.png",
-        paymentLink: ""
     },
     {
         id: 7,
@@ -61,7 +55,6 @@ const gifts = [
         price: 175,
         category: "casa-nova",
         image: "rolo.png",
-        paymentLink: ""
     },
     {
         id: 8,
@@ -70,7 +63,6 @@ const gifts = [
         price: 200,
         category: "casa-nova",
         image: "capacete.png",
-        paymentLink: ""
     },
     {
         id: 9,
@@ -79,7 +71,6 @@ const gifts = [
         price: 225,
         category: "casa-nova",
         image: "controles.png",
-        paymentLink: ""
     },
     {
         id: 10,
@@ -88,7 +79,6 @@ const gifts = [
         price: 250,
         category: "preparacao",
         image: "buque.png",
-        paymentLink: ""
     },
     {
         id: 11,
@@ -97,7 +87,6 @@ const gifts = [
         price: 275,
         category: "casa-nova",
         image: "lanche.png",
-        paymentLink: ""
     },
     {
         id: 12,
@@ -106,7 +95,6 @@ const gifts = [
         price: 300,
         category: "casa-nova",
         image: "lamem.png",
-        paymentLink: ""
     },
     {
         id: 13,
@@ -115,7 +103,6 @@ const gifts = [
         price: 325,
         category: "casa-nova",
         image: "plantas.png",
-        paymentLink: ""
     },
     {
         id: 14,
@@ -124,7 +111,6 @@ const gifts = [
         price: 350,
         category: "casa-nova",
         image: "streaming.png",
-        paymentLink: ""
     },
     {
         id: 15,
@@ -133,7 +119,6 @@ const gifts = [
         price: 375,
         category: "casa-nova",
         image: "cafe.png",
-        paymentLink: ""
     },
     {
         id: 16,
@@ -142,7 +127,6 @@ const gifts = [
         price: 400,
         category: "lua-de-mel",
         image: "aves.png",
-        paymentLink: ""
     },
     {
         id: 17,
@@ -151,7 +135,6 @@ const gifts = [
         price: 425,
         category: "casa-nova",
         image: "frigo.png",
-        paymentLink: ""
     },
     {
         id: 18,
@@ -160,7 +143,6 @@ const gifts = [
         price: 450,
         category: "casa-nova",
         image: "mercado.png",
-        paymentLink: ""
     },
     {
         id: 19,
@@ -169,7 +151,6 @@ const gifts = [
         price: 475,
         category: "lua-de-mel",
         image: "mc.png",
-        paymentLink: ""
     },
     {
         id: 20,
@@ -178,7 +159,6 @@ const gifts = [
         price: 500,
         category: "casa-nova",
         image: "rip.png",
-        paymentLink: ""
     },
     {
         id: 21,
@@ -187,7 +167,6 @@ const gifts = [
         price: 525,
         category: "preparacao",
         image: "coral.png",
-        paymentLink: ""
     },
     {
         id: 22,
@@ -196,7 +175,6 @@ const gifts = [
         price: 550,
         category: "casa-nova",
         image: "conta.png",
-        paymentLink: ""
     },
     {
         id: 23,
@@ -205,7 +183,6 @@ const gifts = [
         price: 575,
         category: "preparacao",
         image: "barba.png",
-        paymentLink: ""
     },
     {
         id: 24,
@@ -214,7 +191,6 @@ const gifts = [
         price: 600,
         category: "preparacao",
         image: "cabelo.png",
-        paymentLink: ""
     },
     {
         id: 25,
@@ -223,7 +199,6 @@ const gifts = [
         price: 625,
         category: "lua-de-mel",
         image: "dolar.png",
-        paymentLink: ""
     },
     {
         id: 26,
@@ -232,7 +207,6 @@ const gifts = [
         price: 650,
         category: "casa-nova",
         image: "moveis.png",
-        paymentLink: ""
     },
     {
         id: 27,
@@ -241,7 +215,6 @@ const gifts = [
         price: 675,
         category: "lua-de-mel",
         image: "tenda.png",
-        paymentLink: ""
     },
     {
         id: 28,
@@ -250,7 +223,6 @@ const gifts = [
         price: 700,
         category: "casa-nova",
         image: "reforma.png",
-        paymentLink: ""
     },
     {
         id: 29,
@@ -259,7 +231,6 @@ const gifts = [
         price: 725,
         category: "casa-nova",
         image: "aposentadoria.png",
-        paymentLink: ""
     },
     {
         id: 30,
@@ -268,7 +239,6 @@ const gifts = [
         price: "R$ Você decide",
         category: "casa-nova",
         image: "porquinho.png",
-        paymentLink: ""
     }
 ];
 
@@ -424,7 +394,7 @@ function createGiftCard(gift) {
             <h3 class="gift-title">${gift.title}</h3>
             <p class="gift-description">${gift.description}</p>
             <div class="gift-price">${formattedPrice}</div>
-            <a href="${gift.paymentLink}" class="gift-link" target="_blank" rel="noopener noreferrer">
+            <a href="${getPaymentLink(gift.id)}" class="gift-link" target="_blank" rel="noopener noreferrer">
                 Presentear
             </a>
         </div>
@@ -574,7 +544,7 @@ function openModal(gift) {
     modalDescription.textContent = gift.description;
     modalPrice.textContent = formattedPrice;
     modalCategory.textContent = getCategoryName(gift.category);
-    modalBuyButton.href = gift.paymentLink;
+    modalBuyButton.href = getPaymentLink(gift.id);
     
     // Set image
     if (isImageFile) {
