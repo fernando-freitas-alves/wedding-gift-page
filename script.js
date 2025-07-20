@@ -482,19 +482,46 @@ function setupEventListeners() {
     });
 }
 
-// Update visitor count (simulated)
-function updateVisitorCount() {
-    // Get visitor count from localStorage or start with 48
-    let visitorCount = localStorage.getItem('visitorCount') || 48;
+// Update visitor count using API
+async function updateVisitorCount() {
+    const visitorCounter = document.querySelector('.visitor-counter');
     
-    // Increment visitor count (simulate new visitor)
-    visitorCount = parseInt(visitorCount) + Math.floor(Math.random() * 3) + 1;
-    
-    // Save to localStorage
-    localStorage.setItem('visitorCount', visitorCount);
-    
-    // Update display
-    visitorCountElement.textContent = `${visitorCount} PESSOAS ESTIVERAM AQUI`;
+    try {
+        // Show loading state
+        visitorCounter.classList.add('loading');
+        visitorCountElement.textContent = 'Carregando...';
+        
+        // First, get current count
+        const getResponse = await fetch('/api/visitor-count');
+        if (getResponse.ok) {
+            const data = await getResponse.json();
+            visitorCountElement.textContent = `${data.count} PESSOAS ESTIVERAM AQUI`;
+        } else {
+            throw new Error('Failed to get visitor count');
+        }
+        
+        // Then increment count (simulate new visitor)
+        const postResponse = await fetch('/api/visitor-count', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (postResponse.ok) {
+            const data = await postResponse.json();
+            visitorCountElement.textContent = `${data.count} PESSOAS ESTIVERAM AQUI`;
+        } else {
+            throw new Error('Failed to increment visitor count');
+        }
+    } catch (error) {
+        console.error('Error updating visitor count:', error);
+        // Don't show anything if API fails - just leave it empty
+        visitorCountElement.textContent = '';
+    } finally {
+        // Remove loading state
+        visitorCounter.classList.remove('loading');
+    }
 }
 
 // Add smooth scrolling for better UX

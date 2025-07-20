@@ -266,6 +266,16 @@ body {
     animation: heartbeat 2s infinite;
 }
 
+.visitor-counter.loading #visitor-count {
+    animation: pulse 1.5s infinite;
+    opacity: 0.7;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
 @keyframes heartbeat {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }

@@ -4,6 +4,7 @@
 # Build artifacts (will be generated during deployment)
 script.js.bak
 build.log
+visitor-count.json
 
 # OS generated files
 .DS_Store
