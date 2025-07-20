@@ -443,9 +443,15 @@ body {
         background-attachment: scroll; /* Better performance on mobile */
     }
     
+    .invitation-container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    
     .invitation-card {
         margin: 20px auto 40px;
-        max-width: 95%;
+        max-width: 100%;
+        width: 100%;
     }
     
     .invitation-content {
@@ -504,9 +510,15 @@ body {
 }
 
 @media (max-width: 480px) {
+    .invitation-container {
+        padding: 0 10px;
+        max-width: 100%;
+    }
+    
     .invitation-card {
         margin: 15px auto 30px;
-        max-width: 98%;
+        max-width: 100%;
+        width: 100%;
     }
     
     .invitation-content {
@@ -574,6 +586,17 @@ body {
 }
 
 @media (max-width: 360px) {
+    .invitation-container {
+        padding: 0 5px;
+        max-width: 100%;
+    }
+    
+    .invitation-card {
+        margin: 10px auto 20px;
+        max-width: 100%;
+        width: 100%;
+    }
+    
     .golden-frame {
         width: 240px;
         height: 240px;
@@ -617,6 +640,7 @@ body {
 .invitation-card {
     margin: 40px auto 60px;
     max-width: 600px;
+    width: 100%;
     perspective: 1000px;
     /* cursor: pointer; */
 }
@@ -698,6 +722,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .invitation-card.hovering .invitation-content {
