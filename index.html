@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Presentes - Flavia & Fernando</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="couple-names">Flavia & Fernando</div>
+        <div class="wedding-date">23 DE NOVEMBRO DE 2025</div>
+        <div class="countdown-banner">
+          <span id="countdown-text"
+            >FALTAM APENAS <span id="days-left">127</span> DIAS PARA O GRANDE
+            DIA</span
+          >
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content-header">
+          <h1 class="page-title">Presentes</h1>
+          <div class="controls">
+            <div class="filter-section">
+              <label>Filtrar por categoria:</label>
+              <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">
+                  Todos
+                </button>
+                <button class="filter-btn" data-category="cha-casa-nova">
+                  Chá de Casa Nova
+                </button>
+                <button class="filter-btn" data-category="casa">Casa</button>
+                <button class="filter-btn" data-category="experiencias">
+                  Experiências
+                </button>
+              </div>
+            </div>
+            <div class="sort-section">
+              <label>Ordenar por valor do presente:</label>
+              <div class="sort-buttons">
+                <button class="sort-btn active" data-sort="lowest">
+                  Menor
+                </button>
+                <button class="sort-btn" data-sort="highest">Maior</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gifts Grid -->
+        <div class="gifts-grid" id="gifts-grid">
+          <!-- Gift cards will be dynamically generated here -->
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="visitor-counter">
+          <i class="fas fa-heart"></i>
+          <span id="visitor-count">48 PESSOAS ESTIVERAM AQUI</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
