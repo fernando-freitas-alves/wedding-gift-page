@@ -398,7 +398,7 @@ function createGiftCard(gift) {
             <p class="gift-description">${gift.description}</p>
             <div class="gift-price">${formattedPrice}</div>
             <a href="${PAYMENT_LINK}" class="gift-link" target="_blank" rel="noopener noreferrer">
-                Transferir Presente
+                Presentear
             </a>
         </div>
     `;
