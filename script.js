@@ -226,19 +226,19 @@ const gifts = [
     },
     {
         id: 29,
-        title: "Engorde o porquinho de vidro duro",
-        description: "Pra quando o ‘futuro’ chegar e bater na porta pedindo parcelamento.",
+        title: "Contribuição para a reforma infinita",
+        description: "Toda casa precisa de reforma. Toda reforma precisa de casa.",
         price: 725,
         category: "casa",
-        image: "porquinho.png"
+        image: "reforma.png"
     },
     {
         id: 30,
-        title: "Contribuição para a reforma infinita",
-        description: "Toda casa precisa de reforma. Toda reforma precisa de casa.",
-        price: 750,
+        title: "Engorde o porquinho de vidro duro",
+        description: "Pra quando o ‘futuro’ chegar e bater na porta pedindo parcelamento.",
+        price: "R$ Você decide",
         category: "casa",
-        image: "reforma.png"
+        image: "porquinho.png"
     }
 ];
 
@@ -343,10 +343,14 @@ function renderGifts() {
     
     // Apply sort
     filteredGifts.sort((a, b) => {
+        // Handle string prices (like "Você decide") - treat them as highest value
+        const aPrice = typeof a.price === 'string' ? Infinity : a.price;
+        const bPrice = typeof b.price === 'string' ? Infinity : b.price;
+        
         if (currentSort === 'lowest') {
-            return a.price - b.price;
+            return aPrice - bPrice;
         } else {
-            return b.price - a.price;
+            return bPrice - aPrice;
         }
     });
     
@@ -366,10 +370,15 @@ function createGiftCard(gift) {
     card.className = 'gift-card';
     
     // Format price
-    const formattedPrice = new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-    }).format(gift.price);
+    let formattedPrice;
+    if (typeof gift.price === 'number') {
+        formattedPrice = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(gift.price);
+    } else {
+        formattedPrice = gift.price; // Use the string as is
+    }
     
     // Check if image is a file (has extension) or emoji
     const isImageFile = gift.image.includes('.') || gift.image.includes('/');
