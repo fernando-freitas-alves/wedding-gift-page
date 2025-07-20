@@ -516,11 +516,55 @@ body {
 }
 
 .invitation-border {
-    background: linear-gradient(135deg, rgba(128, 147, 122, 0.75), rgba(147, 147, 122, 0.75), rgba(122, 147, 122, 0.75));
+    /* d5a369 */
+    background: linear-gradient(135deg, rgba(213, 163, 105, 0.75), rgba(213, 163, 105, 0.05), rgba(213, 163, 105, 0.75));
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.invitation-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.36),
+        rgba(255, 255, 255, 0.68),
+        rgba(255, 255, 255, 0.46),
+        transparent
+    );
+    background-position: var(--shine-x, -100%) 0;
+    background-size: 200% 100%;
+    border-radius: 12px;
+    transition: background-position 0.1s ease-out;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    clip-path: polygon(
+        0 0, 
+        100% 0, 
+        100% 100%, 
+        0 100%, 
+        0 0,
+        12px 12px,
+        12px calc(100% - 12px),
+        calc(100% - 12px) calc(100% - 12px),
+        calc(100% - 12px) 12px,
+        12px 12px
+    );
+}
+
+.invitation-border.shine::before {
+    opacity: 1;
+    background-position: var(--shine-x, 100%) 0;
 }
 
 .invitation-content {
@@ -529,7 +573,7 @@ body {
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 10px;
+    border-radius: 3px;
     border: none;
     padding-top: 20px;
     padding-bottom: 40px;

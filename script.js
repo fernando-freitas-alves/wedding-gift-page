@@ -664,12 +664,14 @@ function scrollToGifts() {
     });
 }
 
-// Apple TV-style mouse following 3D effect
+// Apple TV-style mouse following 3D effect with dynamic shine
 function setupInvitationCard3D() {
     const card = document.querySelector('.invitation-card');
     const border = document.querySelector('.invitation-border');
     
     if (!card || !border) return;
+    
+    let shineTimeout;
     
     card.addEventListener('mousemove', (e) => {
         const rect = border.getBoundingClientRect();
@@ -681,12 +683,15 @@ function setupInvitationCard3D() {
         const mouseY = e.clientY - centerY;
         
         // Apple TV-style: use a smaller range and smoother calculation
-        const maxRotation = 1.15; // Increased for testing
-        const maxLift = 2; // Small lift
+        const maxRotation = 1.15;
+        const maxLift = 2;
         
         // Apple TV-style: both X and Y cursor movement affect card rotation
         const rotateX = (mouseY / (rect.height / 2)) * -maxRotation;
         const rotateY = (mouseX / (rect.width / 2)) * maxRotation;
+        
+        // Calculate shine position based on mouse position
+        const shineX = ((mouseX + rect.width / 2) / rect.width) * 100;
         
         // Apply the 3D transform with smooth transitions
         border.style.transform = `
@@ -695,11 +700,32 @@ function setupInvitationCard3D() {
             rotateY(${rotateY}deg) 
             scale(1.005)
         `;
+        
+        // Apply dynamic shine effect
+        border.style.setProperty('--shine-x', `${shineX}%`);
+        
+        // Add shine class for animation
+        border.classList.add('shine');
+        
+        // Clear previous timeout
+        if (shineTimeout) {
+            clearTimeout(shineTimeout);
+        }
+        
+        // Remove shine class after animation completes
+        shineTimeout = setTimeout(() => {
+            border.classList.remove('shine');
+        }, 500);
     });
     
     card.addEventListener('mouseleave', () => {
         // Reset transform when mouse leaves
         border.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
+        border.classList.remove('shine');
+        
+        if (shineTimeout) {
+            clearTimeout(shineTimeout);
+        }
     });
     
     card.addEventListener('mouseenter', () => {
