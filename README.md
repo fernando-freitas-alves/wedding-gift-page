@@ -83,32 +83,37 @@ const WEDDING_DATE = new Date("2025-11-23T00:00:00");
 
 ### 3. Links de Pagamento Individualizados
 
-Cada presente tem seu próprio link de pagamento. Para manter a segurança, os links são armazenados em um arquivo separado `config.js` que não é versionado no Git.
+Cada presente tem seu próprio link de pagamento. Para manter a segurança, os links são armazenados como variáveis de ambiente.
 
-#### Configuração Inicial:
+#### Configuração para Vercel (Produção):
 
-1. **Copie o template**: `cp config.template.js config.js`
-2. **Edite o arquivo**: `config.js` com seus links reais
-3. **O arquivo `config.js` é ignorado pelo Git** para manter os links seguros
+1. **No dashboard do Vercel**, vá para "Settings" → "Environment Variables"
+2. **Adicione uma variável para cada presente**:
+   - Key: `GIFT_1_PAYMENT_LINK`
+   - Value: `https://SEU-LINK-AQUI`
+   - Repita para todos os presentes (GIFT_2_PAYMENT_LINK, GIFT_3_PAYMENT_LINK, etc.)
 
-```javascript
-// Em config.js
-const PAYMENT_CONFIG = {
-  // Gift ID 1
-  1: "https://SEU-LINK-AQUI",
+#### Desenvolvimento Local:
 
-  // Gift ID 2
-  2: "https://SEU-LINK-AQUI",
+1. **Copie o template**: `cp .env.sample .env`
+2. **Edite o arquivo `.env`** com seus links reais
+3. **O arquivo `.env` é ignorado pelo Git** para manter os links seguros
 
-  // ... continue para todos os presentes
-};
+#### Template de Variáveis:
+
+Use o arquivo `.env.sample` como referência para criar seu `.env`:
+
+```
+GIFT_1_PAYMENT_LINK=https://your-payment-link-1.com
+GIFT_2_PAYMENT_LINK=https://your-payment-link-2.com
+... (continue para todos os 30 presentes)
 ```
 
-#### Atualizar Links:
+#### Segurança:
 
-- Edite apenas o arquivo `config.js`
-- Não é necessário tocar no código principal
-- Os links são carregados automaticamente
+- **Repositório público**: Pode ser publicado com segurança
+- **Links privados**: Armazenados em `.env` (local) ou variáveis do Vercel (produção)
+- **Template**: Use `.env.sample` como referência
 
 ### 4. Lista de Presentes
 
@@ -211,8 +216,8 @@ lista-de-presentes/
 ├── index.html          # Página principal
 ├── styles.css          # Estilos e layout
 ├── script.js           # Funcionalidades e dados
-├── config.js           # Links de pagamento (não versionado)
-├── config.template.js  # Template para config.js
+├── .env.sample         # Template para variáveis de ambiente
+├── .env                # Variáveis de ambiente (não versionado)
 ├── .gitignore          # Arquivos ignorados pelo Git
 ├── images/             # Pasta para suas imagens
 │   ├── cha.png
@@ -225,20 +230,30 @@ lista-de-presentes/
 
 ### Configuração Segura
 
-- **Links de Pagamento**: Armazenados em `config.js` (não versionado)
+- **Links de Pagamento**: Armazenados como variáveis de ambiente no Vercel
 - **Repositório Público**: Pode ser publicado com segurança
-- **Template**: Use `config.template.js` como referência
+- **Segurança**: Links de pagamento não ficam expostos no código
+
+### Deploy no Vercel (Recomendado)
+
+1. **Importe seu repositório** no Vercel
+2. **Configure as variáveis de ambiente** (Settings → Environment Variables)
+3. **Adicione todas as variáveis** GIFT_1_PAYMENT_LINK até GIFT_30_PAYMENT_LINK
+4. **Deploy automático** a cada push no GitHub
 
 ### Deploy no GitHub Pages
 
 1. **Torne o repositório público** (Settings → Danger Zone → Make public)
 2. **Ative GitHub Pages** (Settings → Pages → Deploy from branch → main)
 3. **Seu site estará em**: `https://seu-usuario.github.io/wedding-gift-page/`
+4. **Para links de pagamento**: Use os links incluídos no código (fallback)
 
-### Backup Importante
+### Vantagens do Vercel
 
-- **Mantenha backup** do arquivo `config.js` em local seguro
-- **O arquivo não está no Git**, então você precisa gerenciá-lo manualmente
+- ✅ **Repositório privado** permitido
+- ✅ **Variáveis de ambiente** seguras
+- ✅ **Deploy automático** a cada push
+- ✅ **Hospedagem gratuita** para projetos pessoais
 
 ## 🌟 Dicas
 
@@ -248,7 +263,7 @@ lista-de-presentes/
 4. **Hospedagem**: Use serviços como GitHub Pages, Netlify ou Vercel para hospedar gratuitamente
 5. **Nomes de Arquivos**: Use nomes simples, sem espaços ou caracteres especiais
 6. **Links de Pagamento**: Cada presente pode ter um link diferente para melhor controle
-7. **Segurança**: O arquivo `config.js` com os links de pagamento não é versionado no Git
+7. **Segurança**: Use variáveis de ambiente no Vercel para manter os links seguros
 
 ## 📞 Suporte
 

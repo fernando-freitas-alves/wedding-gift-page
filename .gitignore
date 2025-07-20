@@ -1,5 +1,5 @@
-# Configuration file with sensitive payment links
-config.js
+# Environment variables
+.env
 
 # OS generated files
 .DS_Store
