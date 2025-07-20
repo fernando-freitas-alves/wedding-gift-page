@@ -7,8 +7,11 @@ let scriptContent = fs.readFileSync(scriptPath, 'utf8');
 
 // Create the payment config from environment variables
 let paymentConfig = {};
+console.log('Checking for environment variables...');
 for (let i = 1; i <= 30; i++) {
-    const envVar = process.env[`GIFT_${i}_PAYMENT_LINK`];
+    const envVarName = `GIFT_${i}_PAYMENT_LINK`;
+    const envVar = process.env[envVarName];
+    console.log(`${envVarName}: ${envVar ? 'FOUND' : 'NOT FOUND'}`);
     if (envVar) {
         paymentConfig[i] = envVar;
     }
@@ -27,21 +30,25 @@ if (Object.keys(paymentConfig).length === 0) {
     };
 }
 
-// Replace the getPaymentLink function with the actual config
-const newGetPaymentLinkFunction = `// Function to get payment link from environment variables
-function getPaymentLink(giftId) {
-    const paymentConfig = ${JSON.stringify(paymentConfig, null, 2)};
-    return paymentConfig[giftId] || "#";
-}`;
+// Inject the PAYMENT_CONFIG variable at the beginning of the file
+const paymentConfigVar = `// Payment configuration injected during build
+const PAYMENT_CONFIG = ${JSON.stringify(paymentConfig, null, 2)};
 
-// Replace the existing getPaymentLink function
-scriptContent = scriptContent.replace(
-    /\/\/ Function to get payment link from environment variables[\s\S]*?return fallbackConfig\[giftId\] \|\| "#";\s*}/,
-    newGetPaymentLinkFunction
-);
+`;
+
+// Add the payment config at the beginning of the file
+scriptContent = paymentConfigVar + scriptContent;
 
 // Write the updated script
 fs.writeFileSync(scriptPath, scriptContent, 'utf8');
 
 console.log('Build completed! Payment links injected into script.js');
-console.log(`Found ${Object.keys(paymentConfig).length} payment links`); 
+console.log(`Found ${Object.keys(paymentConfig).length} payment links`);
+
+// Write a build log for debugging
+const buildLog = `Build completed at ${new Date().toISOString()}
+Environment variables found: ${Object.keys(paymentConfig).length}
+Payment config: ${JSON.stringify(paymentConfig, null, 2)}
+`;
+fs.writeFileSync('build.log', buildLog, 'utf8');
+console.log('Build log written to build.log'); 

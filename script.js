@@ -1,44 +1,13 @@
 // Function to get payment link from environment variables
 function getPaymentLink(giftId) {
-    // For production (Vercel), environment variables are injected during build
-    // For local development, you can set these in your browser console
-    // or create a .env file for local testing
+    // First, check if PAYMENT_CONFIG was injected during build (Vercel deployment)
+    if (typeof PAYMENT_CONFIG !== 'undefined' && PAYMENT_CONFIG[giftId]) {
+        return PAYMENT_CONFIG[giftId];
+    }
     
-    // Placeholder for development - replace with your actual payment links
-    const fallbackConfig = {
-        1: "#", // Replace with your payment link for gift 1
-        2: "#", // Replace with your payment link for gift 2
-        3: "#", // Replace with your payment link for gift 3
-        4: "#", // Replace with your payment link for gift 4
-        5: "#", // Replace with your payment link for gift 5
-        6: "#", // Replace with your payment link for gift 6
-        7: "#", // Replace with your payment link for gift 7
-        8: "#", // Replace with your payment link for gift 8
-        9: "#", // Replace with your payment link for gift 9
-        10: "#", // Replace with your payment link for gift 10
-        11: "#", // Replace with your payment link for gift 11
-        12: "#", // Replace with your payment link for gift 12
-        13: "#", // Replace with your payment link for gift 13
-        14: "#", // Replace with your payment link for gift 14
-        15: "#", // Replace with your payment link for gift 15
-        16: "#", // Replace with your payment link for gift 16
-        17: "#", // Replace with your payment link for gift 17
-        18: "#", // Replace with your payment link for gift 18
-        19: "#", // Replace with your payment link for gift 19
-        20: "#", // Replace with your payment link for gift 20
-        21: "#", // Replace with your payment link for gift 21
-        22: "#", // Replace with your payment link for gift 22
-        23: "#", // Replace with your payment link for gift 23
-        24: "#", // Replace with your payment link for gift 24
-        25: "#", // Replace with your payment link for gift 25
-        26: "#", // Replace with your payment link for gift 26
-        27: "#", // Replace with your payment link for gift 27
-        28: "#", // Replace with your payment link for gift 28
-        29: "#", // Replace with your payment link for gift 29
-        30: "#"  // Replace with your payment link for gift 30
-    };
-    
-    return fallbackConfig[giftId] || "#";
+    // Fallback for local development or static hosting (GitHub Pages)
+    // Return current page URL as fallback for better UX
+    return window.location.href;
 }
 
 // Gift data - Easy to edit and extend
