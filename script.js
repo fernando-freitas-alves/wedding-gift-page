@@ -56,7 +56,7 @@ const gifts = [
     },
     {
         id: 7,
-        title: "Rolo p/ noivo malcriado",
+        title: "Rolo de macarrão anti-noivo malcriado",
         description: "Serve pra abrir massa ou corrigir atitudes.",
         price: 175,
         category: "casa-nova",
@@ -110,7 +110,7 @@ const gifts = [
     },
     {
         id: 13,
-        title: "Novos filhos p/ pais de planta",
+        title: "Novos filhos para pais de plantas",
         description: "Filhos que não choram de madrugada, mas às vezes morrem desidratados.",
         price: 325,
         category: "casa-nova",
@@ -128,7 +128,7 @@ const gifts = [
     },
     {
         id: 15,
-        title: "Acordar c/ cheirinho de café",
+        title: "Acordar com cheirinho de café",
         description: "Porque café na cama é amor. Café passado às 6h da manhã…",
         price: 375,
         category: "casa-nova",
@@ -137,7 +137,7 @@ const gifts = [
     },
     {
         id: 16,
-        title: "Passeio p/ observar aves exóticas",
+        title: "Passeio para observar aves exóticas",
         description: "Inclui a experiência de ver o noivo tentando diferenciar pombo de arara.",
         price: 400,
         category: "lua-de-mel",
@@ -173,7 +173,7 @@ const gifts = [
     },
     {
         id: 20,
-        title: "Poltrona p/ esperar a noiva",
+        title: "Poltrona para esperar a noiva",
         description: "Tempo estimado de espera: 7 dias úteis. Poltrona inclusa.",
         price: 500,
         category: "casa-nova",
@@ -182,7 +182,7 @@ const gifts = [
     },
     {
         id: 21,
-        title: "Coral de 'Aleluia' p/ noivo",
+        title: "Coral de 'Aleluia' para o noivo",
         description: "Porque todo mundo merece seu momento épico… nem que seja no chuveiro.",
         price: 525,
         category: "preparacao",
@@ -200,7 +200,7 @@ const gifts = [
     },
     {
         id: 23,
-        title: "1 ano de barba feita p/ noivo",
+        title: "1 ano de barba feita para o noivo",
         description: "Porque nem todo amor resiste a um cacto facial descontrolado.",
         price: 575,
         category: "preparacao",
@@ -209,7 +209,7 @@ const gifts = [
     },
     {
         id: 24,
-        title: "1 ano corte de cabelo p/ noiva",
+        title: "1 ano corte de cabelo para a noiva",
         description: "Casamento passa, cabelo cresce. E não dá pra cortar em casa.",
         price: 600,
         category: "preparacao",
@@ -218,7 +218,7 @@ const gifts = [
     },
     {
         id: 25,
-        title: "Ajuda para pagar o Trump",
+        title: "Ajudar os noivos a pagar o Trump",
         description: "Ajude os noivos a comprar dólar para gastar tudo em bugiganga e voltar da viagem com lembrancinha de geladeira.",
         price: 625,
         category: "lua-de-mel",
@@ -245,25 +245,25 @@ const gifts = [
     },
     {
         id: 28,
-        title: "Aposente os noivos",
-        description: "Começar a planejar hoje pra poder reclamar do INSS amanhã.",
-        price: 700,
-        category: "casa-nova",
-        image: "aposentadoria.png",
-        paymentLink: ""
-    },
-    {
-        id: 29,
         title: "Contribuição para a reforma infinita",
         description: "Toda casa precisa de reforma. Toda reforma precisa de casa.",
-        price: 725,
+        price: 700,
         category: "casa-nova",
         image: "reforma.png",
         paymentLink: ""
     },
     {
+        id: 29,
+        title: "Ajuda para aposentadoria dos noivos",
+        description: "Começar a planejar hoje pra poder reclamar do INSS amanhã.",
+        price: 725,
+        category: "casa-nova",
+        image: "aposentadoria.png",
+        paymentLink: ""
+    },
+    {
         id: 30,
-        title: "Engorde o porquinho de vidro duro",
+        title: "Engorde o porquinho de vidro",
         description: "Pra quando o 'futuro' chegar e bater na porta pedindo parcelamento.",
         price: "R$ Você decide",
         category: "casa-nova",
