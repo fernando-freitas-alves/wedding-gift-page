@@ -8,7 +8,7 @@
     "dev": "node build.js && echo 'Build completed for development'"
   },
   "dependencies": {
-    "@vercel/kv": "^1.0.0"
+    "@upstash/redis": "^1.28.4"
   },
   "keywords": [
     "wedding",

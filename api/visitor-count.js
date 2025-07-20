@@ -1,4 +1,7 @@
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+// Initialize Redis using the recommended fromEnv() method
+const redis = Redis.fromEnv();
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -13,13 +16,13 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === 'GET') {
-      // Read current count from KV store
-      let count = await kv.get('visitor-count') || 48;
+      // Read current count from Redis
+      let count = await redis.get('visitor-count') || 48;
       res.status(200).json({ count });
     } 
     else if (req.method === 'POST') {
       // Increment count using atomic operation
-      const newCount = await kv.incrby('visitor-count', Math.floor(Math.random() * 3) + 1);
+      const newCount = await redis.incrby('visitor-count', Math.floor(Math.random() * 3) + 1);
       res.status(200).json({ count: newCount });
     }
     else {

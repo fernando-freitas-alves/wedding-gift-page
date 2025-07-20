@@ -259,6 +259,16 @@ body {
     gap: 10px;
     color: #8C8273;
     font-size: 0.9rem;
+    min-height: 1.2em;
+}
+
+.visitor-counter #visitor-count {
+    min-width: 250px;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    display: inline-block;
 }
 
 .visitor-counter i {
