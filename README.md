@@ -1,4 +1,4 @@
-# Lista de Presentes - Flavia & Fernando
+# Lista de Presentes - Fernando & Flavia
 
 Um site moderno e responsivo para lista de presentes de casamento, onde os convidados podem escolher e contribuir com presentes para o casal.
 
@@ -11,12 +11,14 @@ Um site moderno e responsivo para lista de presentes de casamento, onde os convi
 ## ✨ Funcionalidades
 
 - **Design Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
-- **Filtros por Categoria**: Filtre presentes por "Chá de Casa Nova", "Casa" ou "Experiências"
+- **Filtros por Categoria**: Filtre presentes por "Preparação para o casamento", "Lua de mel" ou "Casa nova"
 - **Ordenação por Preço**: Ordene do menor para o maior valor ou vice-versa
+- **Modal de Detalhes**: Clique em qualquer presente para ver detalhes completos em um modal
 - **Contador de Dias**: Atualização automática dos dias restantes até o casamento
 - **Contador de Visitantes**: Simula visitantes únicos
-- **Links de Pagamento**: Redirecionamento direto para o link de pagamento
+- **Links de Pagamento Individualizados**: Cada presente tem seu próprio link de pagamento
 - **Suporte a Imagens Reais**: Fácil adição de fotos para cada presente
+- **Design Elegante**: Cores suaves em tons de verde e dourado, tipografia refinada
 
 ## 🖼️ Como Adicionar Imagens aos Presentes
 
@@ -24,7 +26,7 @@ Um site moderno e responsivo para lista de presentes de casamento, onde os convi
 
 1. **Crie a pasta `images/`** (já criada automaticamente)
 2. **Adicione suas fotos** na pasta `images/`
-3. **Use nomes simples** como: `cha-ansiedade.jpg`, `doguinha.png`, etc.
+3. **Use nomes simples** como: `cha.png`, `dogo.png`, etc.
 
 ### Passo 2: Conecte as imagens aos presentes
 
@@ -34,10 +36,10 @@ No arquivo `script.js`, cada presente tem um campo `image`. Simplesmente coloque
 {
     id: 1,
     title: "Chá para aguentar a ansiedade",
-    description: "Uma seleção especial de chás...",
-    price: 381.80,
-    category: "cha-casa-nova",
-    image: "cha-ansiedade.jpg"  // ← Coloque aqui o nome do seu arquivo
+    description: "Serve pra acalmar o coração...",
+    price: 25,
+    category: "preparacao",
+    image: "cha.png",  // ← Coloque aqui o nome do seu arquivo
 }
 ```
 
@@ -67,7 +69,7 @@ Se uma imagem não carregar, o site mostrará automaticamente um emoji 🎁 como
 Edite o arquivo `index.html`:
 
 ```html
-<div class="couple-names">Flavia & Fernando</div>
+<div class="couple-names">Fernando & Flavia</div>
 <div class="wedding-date">23 DE NOVEMBRO DE 2025</div>
 ```
 
@@ -79,13 +81,34 @@ Edite o arquivo `script.js`:
 const WEDDING_DATE = new Date("2025-11-23T00:00:00");
 ```
 
-### 3. Link de Pagamento
+### 3. Links de Pagamento Individualizados
 
-Edite o arquivo `script.js`:
+Cada presente tem seu próprio link de pagamento. Para manter a segurança, os links são armazenados em um arquivo separado `config.js` que não é versionado no Git.
+
+#### Configuração Inicial:
+
+1. **Copie o template**: `cp config.template.js config.js`
+2. **Edite o arquivo**: `config.js` com seus links reais
+3. **O arquivo `config.js` é ignorado pelo Git** para manter os links seguros
 
 ```javascript
-const PAYMENT_LINK = "https://YOUR-LINK-HERE";
+// Em config.js
+const PAYMENT_CONFIG = {
+  // Gift ID 1
+  1: "https://SEU-LINK-AQUI",
+
+  // Gift ID 2
+  2: "https://SEU-LINK-AQUI",
+
+  // ... continue para todos os presentes
+};
 ```
+
+#### Atualizar Links:
+
+- Edite apenas o arquivo `config.js`
+- Não é necessário tocar no código principal
+- Os links são carregados automaticamente
 
 ### 4. Lista de Presentes
 
@@ -96,13 +119,19 @@ Edite o array `gifts` no arquivo `script.js`. Cada presente deve seguir este for
     id: 1,                                    // ID único (não repetir)
     title: "Nome do Presente",                // Título do presente
     description: "Descrição do presente",     // Descrição detalhada
-    price: 100.00,                           // Preço em reais (sem R$)
-    category: "categoria",                   // "cha-casa-nova", "casa", ou "experiencias"
+    price: 100.00,                           // Preço em reais (sem R$) ou string como "Você decide"
+    category: "categoria",                   // "preparacao", "lua-de-mel", ou "casa-nova"
     image: "nome-da-imagem.jpg"              // Nome do arquivo na pasta images/
 }
 ```
 
 ### 5. Categorias
+
+As categorias atuais são:
+
+- **preparacao**: "Preparação para o casamento"
+- **lua-de-mel**: "Lua de mel"
+- **casa-nova**: "Casa nova"
 
 Para adicionar novas categorias:
 
@@ -118,20 +147,39 @@ Para adicionar novas categorias:
 
 ```javascript
 const categories = {
-  "cha-casa-nova": "Chá de Casa Nova",
-  casa: "Casa",
-  experiencias: "Experiências",
+  preparacao: "Preparação para o casamento",
+  "lua-de-mel": "Lua de mel",
+  "casa-nova": "Casa nova",
   "nova-categoria": "Nova Categoria", // Adicione aqui
 };
 ```
 
 ### 6. Cores e Estilo
 
-Edite o arquivo `styles.css` para personalizar:
+O site usa uma paleta de cores suaves em tons de verde e dourado:
 
-- **Cores principais**: Procure por `#667eea`, `#764ba2`, `#20bf6b`
-- **Fontes**: As fontes são carregadas do Google Fonts
-- **Layout**: O grid se adapta automaticamente ao número de presentes
+- **Verdes principais**: `#73995C`, `#AAB296`, `#4A523A`
+- **Dourados**: `#E6D9C2`, `#8C8273`
+- **Fontes**: Allura para nomes do casal, Lato para o resto do texto
+
+Edite o arquivo `styles.css` para personalizar as cores.
+
+## 🎭 Modal de Detalhes
+
+O site agora inclui um modal que abre quando os usuários clicam em qualquer presente (exceto no botão de pagamento). O modal mostra:
+
+- **Imagem completa** do presente
+- **Título e descrição** detalhados
+- **Preço** formatado
+- **Categoria** do presente
+- **Botão de pagamento** individualizado
+
+### Funcionalidades do Modal
+
+- **Abertura**: Clique em qualquer área do card do presente
+- **Fechamento**: Botão X, clique fora do modal, ou tecla Escape
+- **Responsivo**: Adapta-se a diferentes tamanhos de tela
+- **Animações suaves**: Transições elegantes de abertura e fechamento
 
 ## 📱 Responsividade
 
@@ -140,6 +188,8 @@ O site é totalmente responsivo e se adapta a:
 - **Desktop**: Grid de 3 colunas
 - **Tablet**: Grid de 2 colunas
 - **Mobile**: Grid de 1 coluna
+
+O modal também é responsivo e se adapta a diferentes tamanhos de tela.
 
 ## 🎨 Personalização Avançada
 
@@ -161,12 +211,34 @@ lista-de-presentes/
 ├── index.html          # Página principal
 ├── styles.css          # Estilos e layout
 ├── script.js           # Funcionalidades e dados
+├── config.js           # Links de pagamento (não versionado)
+├── config.template.js  # Template para config.js
+├── .gitignore          # Arquivos ignorados pelo Git
 ├── images/             # Pasta para suas imagens
-│   ├── cha-ansiedade.jpg
-│   ├── doguinha.jpg
+│   ├── cha.png
+│   ├── dogo.png
 │   └── ... (suas imagens aqui)
 └── README.md           # Este arquivo
 ```
+
+## 🔒 Segurança e Deploy
+
+### Configuração Segura
+
+- **Links de Pagamento**: Armazenados em `config.js` (não versionado)
+- **Repositório Público**: Pode ser publicado com segurança
+- **Template**: Use `config.template.js` como referência
+
+### Deploy no GitHub Pages
+
+1. **Torne o repositório público** (Settings → Danger Zone → Make public)
+2. **Ative GitHub Pages** (Settings → Pages → Deploy from branch → main)
+3. **Seu site estará em**: `https://seu-usuario.github.io/wedding-gift-page/`
+
+### Backup Importante
+
+- **Mantenha backup** do arquivo `config.js` em local seguro
+- **O arquivo não está no Git**, então você precisa gerenciá-lo manualmente
 
 ## 🌟 Dicas
 
@@ -175,6 +247,8 @@ lista-de-presentes/
 3. **Backup**: Mantenha uma cópia dos arquivos antes de fazer alterações
 4. **Hospedagem**: Use serviços como GitHub Pages, Netlify ou Vercel para hospedar gratuitamente
 5. **Nomes de Arquivos**: Use nomes simples, sem espaços ou caracteres especiais
+6. **Links de Pagamento**: Cada presente pode ter um link diferente para melhor controle
+7. **Segurança**: O arquivo `config.js` com os links de pagamento não é versionado no Git
 
 ## 📞 Suporte
 
@@ -182,4 +256,4 @@ Para dúvidas ou sugestões, entre em contato com o desenvolvedor.
 
 ---
 
-**Desenvolvido com ❤️ para Flavia & Fernando**
+**Desenvolvido com ❤️ para Fernando & Flavia**
