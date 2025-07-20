@@ -30,7 +30,7 @@ const gifts = [
         description: "Porque dizer 'vamos pedir pizza hoje?' também é carinho, mas tem limite.",
         price: 100,
         category: "casa-nova",
-        image: "ovos.png"
+        image: "nuggets.png"
     },
     {
         id: 5,
@@ -118,7 +118,7 @@ const gifts = [
         description: "Porque café na cama é amor. Café passado às 6h da manhã…",
         price: 375,
         category: "casa-nova",
-        image: "café.png"
+        image: "cafe.png"
     },
     {
         id: 16,
@@ -158,7 +158,7 @@ const gifts = [
         description: "Tempo estimado de espera: 7 dias úteis. Poltrona inclusa.",
         price: 500,
         category: "casa-nova",
-        image: "tenda.png"
+        image: "rip.png"
     },
     {
         id: 21,
@@ -198,7 +198,7 @@ const gifts = [
         description: "Ajude os noivos a comprar dólar para gastar tudo em bugiganga e voltar da viagem com lembrancinha de geladeira.",
         price: 625,
         category: "lua-de-mel",
-        image: "tax.png"
+        image: "dolar.png"
     },
     {
         id: 26,
@@ -214,7 +214,7 @@ const gifts = [
         description: "Porque perrengue a dois só se for no acampamento do ano.",
         price: 675,
         category: "lua-de-mel",
-        image: "spa.png"
+        image: "tenda.png"
     },
     {
         id: 28,
