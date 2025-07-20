@@ -15,84 +15,89 @@
     />
   </head>
   <body>
-    <div class="container">
-      <!-- Virtual Invitation Card -->
-      <div class="invitation-card">
-        <div class="invitation-border">
-          <div class="invitation-content">
-          <!-- Golden Frame with Names -->
-          <div class="golden-frame">
-            <div class="frame-image-container">
-              <img
-                src="images/convite-circulo.png"
-                alt="Golden frame decoration"
-                class="frame-image"
-              />
-            </div>
-            <div class="frame-content">
-              <h1 class="couple-names-frame">Fernando<br />& Flavia</h1>
-            </div>
-          </div>
-
-          <!-- Invitation Text -->
-          <div class="invitation-text-section">
-            <h2 class="invite-word">CONVIDAM</h2>
-            <p class="family-text" id="family-text">você</p>
-            <p class="celebration-text">
-              <span class="garamond-text">para</span> <strong>CELEBRAR</strong>
-              <span class="garamond-text">seu</span> <strong>CASAMENTO</strong>
-            </p>
-          </div>
-
-          <!-- Event Details -->
-          <div class="event-details" onclick="openEventDetails()" style="cursor: pointer;">
-            <div class="date-time">
-              11:00 <span class="garamond-text">am</span>, 23 NOVEMBRO 2025
-            </div>
-            <div class="venue">CHEZ BISUTTI GARDEN</div>
-          </div>
-
-          <!-- Decorative Divider -->
-          <div class="decorative-divider">
-            <img src="images/convite-separador.svg" alt="Decorative separator" class="separator-image">
-          </div>
-
-          <!-- Address -->
-          <div class="address-section">
-            <a href="https://www.google.com/maps/place/Chez+Bisutti+Garden/data=!4m2!3m1!1s0x0:0xfaaac0664e6cfa06?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" class="address-link">
-              <div class="address-line">
-                <i class="fas fa-map-marker-alt address-icon"></i>Rod. Eng. Cândido do Rego Chaves – Jardim Piata A
+    <!-- Garden Background Section -->
+    <div class="garden-background-section" id="garden-background">
+      <!-- Overlay layer -->
+      <div class="overlay"></div>
+      <div class="invitation-container" id="invitation-container">
+        <!-- Virtual Invitation Card -->
+        <div class="invitation-card">
+          <div class="invitation-border">
+            <div class="invitation-content">
+            <!-- Golden Frame with Names -->
+            <div class="golden-frame">
+              <div class="frame-image-container">
+                <img
+                  src="images/convite-circulo.png"
+                  alt="Golden frame decoration"
+                  class="frame-image"
+                />
               </div>
-              <div class="address-line">Mogi das Cruzes, SP – 08751-300</div>
-            </a>
-          </div>
+              <div class="frame-content">
+                <h1 class="couple-names-frame">Fernando<br />& Flavia</h1>
+              </div>
+            </div>
 
-          <!-- Interactive Buttons -->
-          <div class="invitation-buttons">
-            <!-- <button class="inv-btn map-btn" onclick="openMap()">MAPA</button> -->
-            <button class="inv-btn rsvp-btn" onclick="openRSVP()">RESPONDER AO CONVITE</button>
-            <button class="inv-btn gifts-btn" onclick="scrollToGifts()">
-              PRESENTEAR
-            </button>
-          </div>
+            <!-- Invitation Text -->
+            <div class="invitation-text-section">
+              <h2 class="invite-word">CONVIDAM</h2>
+              <p class="family-text" id="family-text">você</p>
+              <p class="celebration-text">
+                <span class="garamond-text">para</span> <strong>CELEBRAR</strong>
+                <span class="garamond-text">seu</span> <strong>CASAMENTO</strong>
+              </p>
+            </div>
 
-          <!-- RSVP Instructions -->
-          <div class="rsvp-instructions">
-            CONFIRMAR A PRESENÇA ATRAVÉS DO BOTÃO ACIMA PARA A ASSESSORIA PATÊ
-            ZANETTI ATÉ O DIA 5 DE NOVEMBRO DE 2025.
+            <!-- Event Details -->
+            <div class="event-details" onclick="openEventDetails()" style="cursor: pointer;">
+              <div class="date-time">
+                11:00 <span class="garamond-text">am</span>, 23 NOVEMBRO 2025
+              </div>
+              <div class="venue">CHEZ BISUTTI GARDEN</div>
+            </div>
+
+            <!-- Decorative Divider -->
+            <div class="decorative-divider">
+              <img src="images/convite-separador.svg" alt="Decorative separator" class="separator-image">
+            </div>
+
+            <!-- Address -->
+            <div class="address-section">
+              <a href="https://www.google.com/maps/place/Chez+Bisutti+Garden/data=!4m2!3m1!1s0x0:0xfaaac0664e6cfa06?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" class="address-link">
+                <div class="address-line">
+                  <i class="fas fa-map-marker-alt address-icon"></i>Rod. Eng. Cândido do Rego Chaves – Jardim Piata A
+                </div>
+                <div class="address-line">Mogi das Cruzes, SP – 08751-300</div>
+              </a>
+            </div>
+
+            <!-- Interactive Buttons -->
+            <div class="invitation-buttons">
+              <!-- <button class="inv-btn map-btn" onclick="openMap()">MAPA</button> -->
+              <button class="inv-btn rsvp-btn" onclick="openRSVP()">RESPONDER AO CONVITE</button>
+              <button class="inv-btn gifts-btn" onclick="scrollToGifts()">
+                PRESENTEAR
+              </button>
+            </div>
+
+            <!-- RSVP Instructions -->
+            <div class="rsvp-instructions">
+              CONFIRMAR A PRESENÇA ATRAVÉS DO BOTÃO ACIMA PARA A ASSESSORIA PATÊ
+              ZANETTI ATÉ O DIA 5 DE NOVEMBRO DE 2025.
+            </div>
           </div>
         </div>
+
+        <!-- Header Section -->
+        <header class="header">
+          <div class="countdown-banner">
+            <span id="countdown-text"
+              >FALTAM APENAS <span id="days-left">127</span> DIAS PARA O GRANDE
+              DIA</span
+            >
+          </div>
+        </header>
       </div>
-
-      <!-- Header Section -->
-      <header class="header">
-        <div class="countdown-banner">
-          <span id="countdown-text"
-            >FALTAM APENAS <span id="days-left">127</span> DIAS PARA O GRANDE
-            DIA</span
-          >
-        </div>
-      </header>
     </div>
 
     <!-- Main Content -->

@@ -630,6 +630,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
     setupInvitationCard3D();
+    
+    // Add blur and dimming effect to garden background when invitation starts to appear
+    setTimeout(() => {
+        const gardenBackground = document.getElementById('garden-background');
+        if (gardenBackground) {
+            gardenBackground.classList.add('invitation-loaded');
+        }
+    }, 1000); // 1 second to match when invitation animation starts
 });
 
 // Add some interactivity to gift cards
@@ -721,8 +729,8 @@ function openEventDetails() {
 }
 
 function scrollToGifts() {
-    // Scroll to the "Lista de Presentes" header
-    document.querySelector('.page-title').scrollIntoView({
+    // Scroll to the "Lista de Presentes" section
+    document.querySelector('.main-content').scrollIntoView({
         behavior: 'smooth',
         block: 'start'
     });
