@@ -668,6 +668,7 @@ function scrollToGifts() {
 function setupInvitationCard3D() {
     const card = document.querySelector('.invitation-card');
     const border = document.querySelector('.invitation-border');
+    const frameImageContainer = document.querySelector('.frame-image-container');
     
     if (!card || !border) return;
     
@@ -701,11 +702,15 @@ function setupInvitationCard3D() {
             scale(1.005)
         `;
         
-        // Apply dynamic shine effect
+        // Apply dynamic shine effect to border
         border.style.setProperty('--shine-x', `${shineX}%`);
-        
-        // Add shine class for animation
         border.classList.add('shine');
+        
+        // Apply dynamic shine effect to frame image container
+        if (frameImageContainer) {
+            frameImageContainer.style.setProperty('--shine-x', `${shineX}%`);
+            frameImageContainer.classList.add('shine');
+        }
         
         // Clear previous timeout
         if (shineTimeout) {
@@ -715,6 +720,9 @@ function setupInvitationCard3D() {
         // Remove shine class after animation completes
         shineTimeout = setTimeout(() => {
             border.classList.remove('shine');
+            if (frameImageContainer) {
+                frameImageContainer.classList.remove('shine');
+            }
         }, 500);
     });
     
@@ -722,6 +730,10 @@ function setupInvitationCard3D() {
         // Reset transform when mouse leaves
         border.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
         border.classList.remove('shine');
+        
+        if (frameImageContainer) {
+            frameImageContainer.classList.remove('shine');
+        }
         
         if (shineTimeout) {
             clearTimeout(shineTimeout);
