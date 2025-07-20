@@ -669,6 +669,8 @@ function setupInvitationCard3D() {
     const card = document.querySelector('.invitation-card');
     const border = document.querySelector('.invitation-border');
     const frameImageContainer = document.querySelector('.frame-image-container');
+    const familyText = document.querySelector('.family-text');
+    const rsvpBtn = document.querySelector('.inv-btn.rsvp-btn');
     
     if (!card || !border) return;
     
@@ -712,6 +714,18 @@ function setupInvitationCard3D() {
             frameImageContainer.classList.add('shine');
         }
         
+        // Apply dynamic shine effect to family text
+        if (familyText) {
+            familyText.style.setProperty('--shine-x', `${shineX}%`);
+            familyText.classList.add('shine');
+        }
+        
+        // Apply dynamic shine effect to RSVP button
+        if (rsvpBtn) {
+            rsvpBtn.style.setProperty('--shine-x', `${shineX}%`);
+            rsvpBtn.classList.add('shine');
+        }
+        
         // Clear previous timeout
         if (shineTimeout) {
             clearTimeout(shineTimeout);
@@ -723,6 +737,12 @@ function setupInvitationCard3D() {
             if (frameImageContainer) {
                 frameImageContainer.classList.remove('shine');
             }
+            if (familyText) {
+                familyText.classList.remove('shine');
+            }
+            if (rsvpBtn) {
+                rsvpBtn.classList.remove('shine');
+            }
         }, 500);
     });
     
@@ -733,6 +753,14 @@ function setupInvitationCard3D() {
         
         if (frameImageContainer) {
             frameImageContainer.classList.remove('shine');
+        }
+        
+        if (familyText) {
+            familyText.classList.remove('shine');
+        }
+        
+        if (rsvpBtn) {
+            rsvpBtn.classList.remove('shine');
         }
         
         if (shineTimeout) {

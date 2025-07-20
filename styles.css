@@ -690,6 +690,33 @@ body {
     font-style: italic;
     letter-spacing: -0.5px;
     line-height: 1.1;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        90deg,
+        #c09355,
+        #c09355,
+        #c09355
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background 0.1s ease-out;
+}
+
+.family-text.shine {
+    background: linear-gradient(
+        90deg,
+        #c09355,
+        #d4b076,
+        #e0c08a,
+        #d4b076,
+        #c09355
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+    background-position: var(--shine-x, 0%) 0;
 }
 
 .celebration-text {
@@ -808,6 +835,35 @@ body {
     background: #d5a369;
     color: white;
     border-color: #c09355;
+    position: relative;
+    overflow: hidden;
+}
+
+.inv-btn.rsvp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--shine-x, -100%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    background-size: 200% 100%;
+    transition: left 0.1s ease-out;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+}
+
+.inv-btn.rsvp-btn.shine::before {
+    opacity: 1;
+    left: var(--shine-x, 100%);
 }
 
 .inv-btn.rsvp-btn:hover {
