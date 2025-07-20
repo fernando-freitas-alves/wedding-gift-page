@@ -277,11 +277,58 @@ function updateCountdown() {
     const timeLeft = WEDDING_DATE - now;
     const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
     
-    if (daysLeft > 0) {
-        daysLeftElement.textContent = daysLeft;
+    const countdownText = document.getElementById('countdown-text');
+    
+    if (daysLeft > 365) {
+        const years = Math.floor(daysLeft / 365);
+        const remainingDays = daysLeft % 365;
+        if (years === 1) {
+            countdownText.innerHTML = `FALTAM <span id="days-left">${daysLeft}</span> DIAS PARA O GRANDE DIA`;
+        } else {
+            countdownText.innerHTML = `FALTAM <span id="days-left">${daysLeft}</span> DIAS PARA O GRANDE DIA`;
+        }
+    } else if (daysLeft > 30) {
+        const months = Math.floor(daysLeft / 30);
+        const remainingDays = daysLeft % 30;
+        if (months === 1) {
+            countdownText.innerHTML = `FALTAM <span id="days-left">${daysLeft}</span> DIAS PARA O GRANDE DIA`;
+        } else {
+            countdownText.innerHTML = `FALTAM <span id="days-left">${daysLeft}</span> DIAS PARA O GRANDE DIA`;
+        }
+    } else if (daysLeft > 7) {
+        const weeks = Math.floor(daysLeft / 7);
+        if (weeks === 1) {
+            countdownText.innerHTML = `FALTAM <span id="days-left">${daysLeft}</span> DIAS PARA O GRANDE DIA`;
+        } else {
+            countdownText.innerHTML = `FALTAM <span id="days-left">${daysLeft}</span> DIAS PARA O GRANDE DIA`;
+        }
+    } else if (daysLeft > 1) {
+        countdownText.innerHTML = `FALTAM APENAS <span id="days-left">${daysLeft}</span> DIAS PARA O GRANDE DIA`;
+    } else if (daysLeft === 1) {
+        countdownText.innerHTML = `AMANHÃ É O GRANDE DIA!`;
+        daysLeftElement.textContent = '';
+    } else if (daysLeft === 0) {
+        countdownText.innerHTML = `HOJE É O GRANDE DIA!`;
+        daysLeftElement.textContent = '';
     } else {
-        daysLeftElement.textContent = '0';
-        document.getElementById('countdown-text').textContent = 'HOJE É O GRANDE DIA!';
+        // Wedding has passed
+        const daysSince = Math.abs(daysLeft);
+        if (daysSince === 1) {
+            countdownText.innerHTML = `O GRANDE DIA FOI ONTEM!`;
+        } else if (daysSince < 30) {
+            countdownText.innerHTML = `O GRANDE DIA FOI HÁ <span id="days-left">${daysSince}</span> DIAS`;
+        } else if (daysSince < 365) {
+            const months = Math.floor(daysSince / 30);
+            countdownText.innerHTML = `O GRANDE DIA FOI HÁ <span id="days-left">${daysSince}</span> DIAS`;
+        } else {
+            const years = Math.floor(daysSince / 365);
+            countdownText.innerHTML = `O GRANDE DIA FOI HÁ <span id="days-left">${daysSince}</span> DIAS`;
+        }
+    }
+    
+    // Update the days element if it exists
+    if (daysLeftElement && daysLeftElement.textContent !== '') {
+        daysLeftElement.textContent = daysLeft > 0 ? daysLeft : Math.abs(daysLeft);
     }
 }
 
