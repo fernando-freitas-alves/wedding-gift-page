@@ -728,7 +728,7 @@ function scrollToGifts() {
     });
 }
 
-// Apple TV-style mouse following 3D effect with dynamic shine
+// Apple TV-style mouse and touch following 3D effect with dynamic shine
 function setupInvitationCard3D() {
     const card = document.querySelector('.invitation-card');
     const border = document.querySelector('.invitation-border');
@@ -739,26 +739,28 @@ function setupInvitationCard3D() {
     if (!card || !border) return;
     
     let shineTimeout;
+    let isTouching = false;
     
-    card.addEventListener('mousemove', (e) => {
+    // Function to handle both mouse and touch movement
+    function handleMove(clientX, clientY) {
         const rect = border.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         
-        // Calculate mouse position relative to border center
-        const mouseX = e.clientX - centerX;
-        const mouseY = e.clientY - centerY;
+        // Calculate position relative to border center
+        const moveX = clientX - centerX;
+        const moveY = clientY - centerY;
         
         // Apple TV-style: use a smaller range and smoother calculation
-        const maxRotation = 1.15;
+        const maxRotation = 7;
         const maxLift = 2;
         
-        // Apple TV-style: both X and Y cursor movement affect card rotation
-        const rotateX = (mouseY / (rect.height / 2)) * -maxRotation;
-        const rotateY = (mouseX / (rect.width / 2)) * maxRotation;
+        // Apple TV-style: both X and Y movement affect card rotation
+        const rotateX = (moveY / (rect.height / 2)) * -maxRotation;
+        const rotateY = (moveX / (rect.width / 2)) * maxRotation;
         
-        // Calculate shine position based on mouse position
-        const shineX = ((mouseX + rect.width / 2) / rect.width) * 100;
+        // Calculate shine position based on movement position
+        const shineX = ((moveX + rect.width / 2) / rect.width) * 100;
         
         // Apply the 3D transform with smooth transitions
         border.style.transform = `
@@ -808,10 +810,10 @@ function setupInvitationCard3D() {
                 rsvpBtn.classList.remove('shine');
             }
         }, 500);
-    });
+    }
     
-    card.addEventListener('mouseleave', () => {
-        // Reset transform when mouse leaves
+    // Function to reset the card
+    function resetCard() {
         border.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
         border.classList.remove('shine');
         
@@ -830,15 +832,95 @@ function setupInvitationCard3D() {
         if (shineTimeout) {
             clearTimeout(shineTimeout);
         }
-    });
+    }
     
-    card.addEventListener('mouseenter', () => {
-        // Add hover class for other effects
-        card.classList.add('hovering');
+    // Mouse events
+    card.addEventListener('mousemove', (e) => {
+        if (!isTouching) { // Only handle mouse if not touching
+            handleMove(e.clientX, e.clientY);
+        }
     });
     
     card.addEventListener('mouseleave', () => {
-        // Remove hover class
-        card.classList.remove('hovering');
+        if (!isTouching) { // Only reset if not touching
+            resetCard();
+        }
+    });
+    
+    card.addEventListener('mouseenter', () => {
+        if (!isTouching) { // Only add hover class if not touching
+            card.classList.add('hovering');
+        }
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        if (!isTouching) { // Only remove hover class if not touching
+            card.classList.remove('hovering');
+        }
+    });
+    
+    // Touch events
+    let touchStartY = 0;
+    let touchStartX = 0;
+    let isCardTouch = false;
+    
+    card.addEventListener('touchstart', (e) => {
+        const rect = card.getBoundingClientRect();
+        const touch = e.touches[0];
+        
+        // Store initial touch position
+        touchStartY = touch.clientY;
+        touchStartX = touch.clientX;
+        
+        // Check if touch is within card bounds
+        if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
+            touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+            isCardTouch = true;
+            isTouching = true;
+            card.classList.add('hovering');
+            handleMove(touch.clientX, touch.clientY);
+        }
+    });
+    
+    card.addEventListener('touchmove', (e) => {
+        if (!isCardTouch) return;
+        
+        const touch = e.touches[0];
+        const deltaY = Math.abs(touch.clientY - touchStartY);
+        const deltaX = Math.abs(touch.clientX - touchStartX);
+        
+        // If this looks like a scroll gesture (more vertical than horizontal movement),
+        // cancel the 3D effect and allow normal scrolling
+        if (deltaY > 10 && deltaY > deltaX * 2) {
+            isCardTouch = false;
+            isTouching = false;
+            resetCard();
+            card.classList.remove('hovering');
+            return;
+        }
+        
+        // Only prevent default for intentional card interactions (more horizontal movement)
+        if (deltaX > 5 && deltaX > deltaY * 0.5) {
+            e.preventDefault();
+            handleMove(touch.clientX, touch.clientY);
+        }
+    }, { passive: false });
+    
+    card.addEventListener('touchend', (e) => {
+        if (isCardTouch) {
+            isCardTouch = false;
+            isTouching = false;
+            resetCard();
+            card.classList.remove('hovering');
+        }
+    });
+    
+    card.addEventListener('touchcancel', (e) => {
+        if (isCardTouch) {
+            isCardTouch = false;
+            isTouching = false;
+            resetCard();
+            card.classList.remove('hovering');
+        }
     });
 } 
