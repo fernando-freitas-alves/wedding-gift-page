@@ -1,0 +1,14 @@
+# Lista de Famílias para Convites
+# Cada linha será usada para gerar um convite personalizado
+# Linhas vazias e comentários (começando com #) são ignoradas
+
+Família Gabriel – Paulo, Maria e Antônio
+Família Silva – Carlos, Ana e Pedro
+Família Santos – Roberto, Maria e João
+Família Oliveira – Paulo, Fernanda e Lucas
+Família Costa – André, Juliana e Sofia
+Família Ferreira – Ricardo, Camila e Mateus
+Família Almeida – Daniel, Patrícia e Isabella
+Família Pereira – Marcos, Luciana e Rafael
+Família Rodrigues – Thiago, Amanda e Nicolas
+Família Martins – Felipe, Carolina e Valentina

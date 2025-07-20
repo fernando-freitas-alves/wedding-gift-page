@@ -11,9 +11,9 @@ console.log('Checking for environment variables...');
 for (let i = 1; i <= 30; i++) {
     const envVarName = `GIFT_${i}_PAYMENT_LINK`;
     const envVar = process.env[envVarName];
-    console.log(`${envVarName}: ${envVar ? 'FOUND' : 'NOT FOUND'}`);
     if (envVar) {
         paymentConfig[i] = envVar;
+        console.log(`${envVarName}: FOUND`);
     }
 }
 
@@ -44,6 +44,7 @@ const PAYMENT_CONFIG = ${JSON.stringify(paymentConfig, null, 2)};
 const RSVP_LINK = ${rsvpLink ? `"${rsvpLink}"` : 'undefined'};
 const EVENT_DETAILS_LINK = ${eventDetailsLink ? `"${eventDetailsLink}"` : 'undefined'};
 
+
 `;
 
 // Add the configuration at the beginning of the file
@@ -55,14 +56,4 @@ fs.writeFileSync(scriptPath, scriptContent, 'utf8');
 console.log('Build completed! Configuration injected into script.js');
 console.log(`Found ${Object.keys(paymentConfig).length} payment links`);
 console.log(`RSVP link: ${rsvpLink ? 'FOUND' : 'NOT FOUND'}`);
-console.log(`Event Details link: ${eventDetailsLink ? 'FOUND' : 'NOT FOUND'}`);
-
-// Write a build log for debugging
-const buildLog = `Build completed at ${new Date().toISOString()}
-Environment variables found: ${Object.keys(paymentConfig).length}
-Payment config: ${JSON.stringify(paymentConfig, null, 2)}
-RSVP link: ${rsvpLink || 'NOT FOUND'}
-Event Details link: ${eventDetailsLink || 'NOT FOUND'}
-`;
-fs.writeFileSync('build.log', buildLog, 'utf8');
-console.log('Build log written to build.log'); 
+console.log(`Event Details link: ${eventDetailsLink ? 'FOUND' : 'NOT FOUND'}`); 

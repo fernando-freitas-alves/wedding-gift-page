@@ -292,6 +292,7 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const sortButtons = document.querySelectorAll('.sort-btn');
 const daysLeftElement = document.getElementById('days-left');
 const visitorCountElement = document.getElementById('visitor-count');
+const familyTextElement = document.getElementById('family-text');
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -299,10 +300,73 @@ document.addEventListener('DOMContentLoaded', function() {
     renderGifts();
     setupEventListeners();
     updateVisitorCount();
+    processInviteParameter().catch(error => {
+        console.error('Error processing invite parameter:', error);
+    });
     
     // Update countdown every day
     setInterval(updateCountdown, 24 * 60 * 60 * 1000);
 });
+
+// Function to process the encrypted invite parameter
+async function processInviteParameter() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const convidado = urlParams.get('convidado');
+    
+    if (!convidado) {
+        return; // Keep default "você"
+    }
+    
+    try {
+        const decryptedName = await decryptInviteParameter(convidado);
+        if (decryptedName && familyTextElement) {
+            familyTextElement.textContent = decryptedName;
+        }
+    } catch (error) {
+        console.error('Error decrypting invite parameter:', error);
+        // Keep default text on error
+    }
+}
+
+// Function to decrypt the invite parameter using client-side decryption
+async function decryptInviteParameter(encryptedParam) {
+    try {
+        // URL decode the parameter
+        const decodedParam = decodeURIComponent(encryptedParam);
+        
+        // Decrypt the family name using AES with shared secret
+        // CryptoJS can directly handle the OpenSSL format (U2FsdGVkX1...)
+        const familyName = decryptAES(decodedParam, 'db9934a62a8a09a4c92a8fac3b7808b6');
+        if (!familyName) {
+            throw new Error('Failed to decrypt family name');
+        }
+        
+        return familyName;
+    } catch (error) {
+        console.error('Decryption failed:', error);
+        return null;
+    }
+}
+
+// Function to decrypt AES
+function decryptAES(encryptedData, key) {
+    try {
+        // CryptoJS can handle OpenSSL's AES format directly
+        const decrypted = CryptoJS.AES.decrypt(encryptedData, key);
+        const result = decrypted.toString(CryptoJS.enc.Utf8);
+        
+        // Check if decryption was successful
+        if (!result) {
+            console.error('Decryption returned empty result');
+            return null;
+        }
+        
+        return result;
+    } catch (error) {
+        console.error('AES decryption failed:', error);
+        return null;
+    }
+}
 
 // Update countdown timer
 function updateCountdown() {
