@@ -10,6 +10,30 @@ function getPaymentLink(giftId) {
     return window.location.href;
 }
 
+// Function to get RSVP link from environment variables
+function getRSVPLink() {
+    // First, check if RSVP_LINK was injected during build (Vercel deployment)
+    if (typeof RSVP_LINK !== 'undefined' && RSVP_LINK) {
+        return RSVP_LINK;
+    }
+    
+    // Fallback for local development or static hosting (GitHub Pages)
+    // Return current page URL as fallback for better UX
+    return window.location.href;
+}
+
+// Function to get Event Details link from environment variables
+function getEventDetailsLink() {
+    // First, check if EVENT_DETAILS_LINK was injected during build (Vercel deployment)
+    if (typeof EVENT_DETAILS_LINK !== 'undefined' && EVENT_DETAILS_LINK) {
+        return EVENT_DETAILS_LINK;
+    }
+    
+    // Fallback for local development or static hosting (GitHub Pages)
+    // Return current page URL as fallback for better UX
+    return window.location.href;
+}
+
 // Gift data - Easy to edit and extend
 const gifts = [
     {
@@ -541,6 +565,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add loading animation
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
+    setupInvitationCard3D();
 });
 
 // Add some interactivity to gift cards
@@ -610,4 +635,80 @@ function closeModal() {
     const modal = document.getElementById('gift-modal');
     modal.style.display = 'none';
     document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Invitation button functions
+function openMap() {
+    // Open Google Maps with the venue address
+    const address = encodeURIComponent('Rod. Eng. Cândido do Rego Chaves – Jardim Piata A, Mogi das Cruzes, SP');
+    window.open(`https://maps.google.com/?q=${address}`, '_blank');
+}
+
+function openRSVP() {
+    // Open RSVP link from environment variable
+    const rsvpLink = getRSVPLink();
+    window.open(rsvpLink, '_blank');
+}
+
+function openEventDetails() {
+    // Open Event Details link from environment variable
+    const eventDetailsLink = getEventDetailsLink();
+    window.open(eventDetailsLink, '_blank');
+}
+
+function scrollToGifts() {
+    // Scroll to the "Lista de Presentes" header
+    document.querySelector('.page-title').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+// Apple TV-style mouse following 3D effect
+function setupInvitationCard3D() {
+    const card = document.querySelector('.invitation-card');
+    const border = document.querySelector('.invitation-border');
+    
+    if (!card || !border) return;
+    
+    card.addEventListener('mousemove', (e) => {
+        const rect = border.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        // Calculate mouse position relative to border center
+        const mouseX = e.clientX - centerX;
+        const mouseY = e.clientY - centerY;
+        
+        // Apple TV-style: use a smaller range and smoother calculation
+        const maxRotation = 1.15; // Increased for testing
+        const maxLift = 2; // Small lift
+        
+        // Apple TV-style: both X and Y cursor movement affect card rotation
+        const rotateX = (mouseY / (rect.height / 2)) * -maxRotation;
+        const rotateY = (mouseX / (rect.width / 2)) * maxRotation;
+        
+        // Apply the 3D transform with smooth transitions
+        border.style.transform = `
+            translateY(-${maxLift}px) 
+            rotateX(${rotateX}deg) 
+            rotateY(${rotateY}deg) 
+            scale(1.005)
+        `;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        // Reset transform when mouse leaves
+        border.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+    
+    card.addEventListener('mouseenter', () => {
+        // Add hover class for other effects
+        card.classList.add('hovering');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        // Remove hover class
+        card.classList.remove('hovering');
+    });
 } 

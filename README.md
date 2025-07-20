@@ -69,7 +69,7 @@ Se uma imagem não carregar, o site mostrará automaticamente um emoji 🎁 como
 Edite o arquivo `index.html`:
 
 ```html
-<div class="couple-names">Fernando & Flavia</div>
+<div class="couple-names-frame">Fernando & Flavia</div>
 <div class="wedding-date">23 DE NOVEMBRO DE 2025</div>
 ```
 

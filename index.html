@@ -6,7 +6,7 @@
     <title>Lista de Presentes - Fernando & Flavia</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Allura&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@700&family=EB+Garamond:ital,wght@0,400;1,400;1,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,10 +16,74 @@
   </head>
   <body>
     <div class="container">
+      <!-- Virtual Invitation Card -->
+      <div class="invitation-card">
+        <div class="invitation-border">
+          <div class="invitation-content">
+          <!-- Golden Frame with Names -->
+          <div class="golden-frame">
+            <img
+              src="images/convite-circulo.png"
+              alt="Golden frame decoration"
+              class="frame-image"
+            />
+            <div class="frame-content">
+              <h1 class="couple-names-frame">Fernando<br />& Flavia</h1>
+            </div>
+          </div>
+
+          <!-- Invitation Text -->
+          <div class="invitation-text-section">
+            <h2 class="invite-word">CONVIDAM</h2>
+            <p class="family-text">Família Gabriel – Jorge, Miriam e Augusto</p>
+            <p class="celebration-text">
+              <span class="garamond-text">para</span> <strong>CELEBRAR</strong>
+              <span class="garamond-text">seu</span> <strong>CASAMENTO</strong>
+            </p>
+          </div>
+
+          <!-- Event Details -->
+          <div class="event-details" onclick="openEventDetails()" style="cursor: pointer;">
+            <div class="date-time">
+              11:00 <span class="garamond-text">am</span>, 23 NOVEMBRO 2025
+            </div>
+            <div class="venue">CHEZ BISUTTI GARDEN</div>
+          </div>
+
+          <!-- Decorative Divider -->
+          <div class="decorative-divider">
+            <img src="images/convite-separador.svg" alt="Decorative separator" class="separator-image">
+          </div>
+
+          <!-- Address -->
+          <div class="address-section">
+            <a href="https://www.google.com/maps/place/Chez+Bisutti+Garden/data=!4m2!3m1!1s0x0:0xfaaac0664e6cfa06?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" class="address-link">
+              <div class="address-line">
+                <i class="fas fa-map-marker-alt address-icon"></i>Rod. Eng. Cândido do Rego Chaves – Jardim Piata A
+              </div>
+              <div class="address-line">Mogi das Cruzes, SP – 08751-300</div>
+            </a>
+          </div>
+
+          <!-- Interactive Buttons -->
+          <div class="invitation-buttons">
+            <!-- <button class="inv-btn map-btn" onclick="openMap()">MAPA</button> -->
+            <button class="inv-btn rsvp-btn" onclick="openRSVP()">RESPONDER AO CONVITE</button>
+            <button class="inv-btn gifts-btn" onclick="scrollToGifts()">
+              PRESENTEAR
+            </button>
+          </div>
+
+          <!-- RSVP Instructions -->
+          <div class="rsvp-instructions">
+            CONFIRMAR A PRESENÇA ATRAVÉS DO RSVP ACIMA PARA A ASSESSORIA PATÊ
+            ZANETTI ATÉ O DIA 18 DE NOVEMBRO DE 2025.
+          </div>
+        </div>
+      </div>
+
       <!-- Header Section -->
       <header class="header">
-        <div class="couple-names">Fernando & Flavia</div>
-        <div class="wedding-date">23 DE NOVEMBRO DE 2025</div>
         <div class="countdown-banner">
           <span id="countdown-text"
             >FALTAM APENAS <span id="days-left">127</span> DIAS PARA O GRANDE
@@ -27,55 +91,55 @@
           >
         </div>
       </header>
+    </div>
 
-      <!-- Main Content -->
-      <main class="main-content">
-        <div class="content-header">
-          <h1 class="page-title">Lista de Presentes</h1>
-          <div class="controls">
-            <div class="filter-section">
-              <label>Filtrar por categoria:</label>
-              <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">
-                  Todos
-                </button>
-                <button class="filter-btn" data-category="preparacao">
-                  Preparação para o casamento
-                </button>
-                <button class="filter-btn" data-category="lua-de-mel">
-                  Lua de mel
-                </button>
-                <button class="filter-btn" data-category="casa-nova">
-                  Casa nova
-                </button>
-              </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-header">
+        <h1 class="page-title">Lista de Presentes</h1>
+        <div class="controls">
+          <div class="filter-section">
+            <label>Filtrar por categoria:</label>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-category="all">
+                Todos
+              </button>
+              <button class="filter-btn" data-category="preparacao">
+                Preparação para o casamento
+              </button>
+              <button class="filter-btn" data-category="lua-de-mel">
+                Lua de mel
+              </button>
+              <button class="filter-btn" data-category="casa-nova">
+                Casa nova
+              </button>
             </div>
-            <div class="sort-section">
-              <label>Ordenar por valor do presente:</label>
-              <div class="sort-buttons">
-                <button class="sort-btn active" data-sort="lowest">
-                  Menor
-                </button>
-                <button class="sort-btn" data-sort="highest">Maior</button>
-              </div>
+          </div>
+          <div class="sort-section">
+            <label>Ordenar por valor do presente:</label>
+            <div class="sort-buttons">
+              <button class="sort-btn active" data-sort="lowest">
+                Menor
+              </button>
+              <button class="sort-btn" data-sort="highest">Maior</button>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Gifts Grid -->
-        <div class="gifts-grid" id="gifts-grid">
-          <!-- Gift cards will be dynamically generated here -->
-        </div>
-      </main>
+      <!-- Gifts Grid -->
+      <div class="gifts-grid" id="gifts-grid">
+        <!-- Gift cards will be dynamically generated here -->
+      </div>
+    </main>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="visitor-counter">
-          <i class="fas fa-heart"></i>
-          <span id="visitor-count"></span>
-        </div>
-      </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="visitor-counter">
+        <i class="fas fa-heart"></i>
+        <span id="visitor-count"></span>
+      </div>
+    </footer>
 
     <!-- Gift Modal -->
     <div id="gift-modal" class="modal">
