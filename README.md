@@ -92,6 +92,7 @@ Cada presente tem seu próprio link de pagamento. Para manter a segurança, os l
    - Key: `GIFT_1_PAYMENT_LINK`
    - Value: `https://SEU-LINK-AQUI`
    - Repita para todos os presentes (GIFT_2_PAYMENT_LINK, GIFT_3_PAYMENT_LINK, etc.)
+3. **O build script** (`build.js`) irá automaticamente injetar as variáveis no JavaScript durante o deploy
 
 #### Desenvolvimento Local:
 
@@ -218,6 +219,9 @@ lista-de-presentes/
 ├── script.js           # Funcionalidades e dados
 ├── .env.sample         # Template para variáveis de ambiente
 ├── .env                # Variáveis de ambiente (não versionado)
+├── build.js            # Script de build para injetar variáveis
+├── vercel.json         # Configuração do Vercel
+├── package.json        # Configuração do Node.js
 ├── .gitignore          # Arquivos ignorados pelo Git
 ├── images/             # Pasta para suas imagens
 │   ├── cha.png

@@ -1,0 +1,17 @@
+{
+  "name": "lista-de-presentes",
+  "version": "1.0.0",
+  "description": "Wedding gift list website",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && echo 'Build completed for development'"
+  },
+  "keywords": [
+    "wedding",
+    "gifts",
+    "static-site"
+  ],
+  "author": "Fernando & Flavia",
+  "license": "MIT"
+}

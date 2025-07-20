@@ -1,6 +1,9 @@
 # Environment variables
 .env
 
+# Build artifacts (will be generated during deployment)
+script.js.bak
+
 # OS generated files
 .DS_Store
 .DS_Store?
