@@ -3,240 +3,240 @@ const gifts = [
     {
         id: 1,
         title: "Chá para aguentar a ansiedade",
-        description: "Uma seleção especial de chás para ajudar a relaxar durante os preparativos do casamento",
-        price: 381.80,
+        description: "Serve pra acalmar o coração, ou pelo menos esquentar a mão enquanto espera o cerimonial.",
+        price: 25,
         category: "cha-casa-nova",
         image: "cha.png"
     },
     {
         id: 2,
-        title: "Torne o doguinha realidade",
-        description: "Ajude-nos a realizar o sonho de ter nosso primeiro pet juntos",
-        price: 181.80,
+        title: "Torne o doguinho realidade",
+        description: "Ele ainda vai ser da família… e já começou a dar despesa.",
+        price: 50,
         category: "casa",
         image: "dogo.png"
     },
     {
         id: 3,
-        title: "Lenço salva maquiagem",
-        description: "Para aqueles momentos emocionais que não podem estragar a make",
-        price: 377.82,
+        title: "Lenço salva-maquiagem",
+        description: "Lágrimas liberadas! Só não vale escorrer rímel até o queixo.",
+        price: 75,
         category: "cha-casa-nova",
         image: "choro.png"
     },
     {
         id: 4,
         title: "Apoio para comer mais saudável",
-        description: "Utensílios de cozinha para incentivar uma alimentação mais equilibrada",
-        price: 103.09,
+        description: "Porque dizer ‘vamos pedir pizza hoje?’ também é carinho, mas tem limite.",
+        price: 100,
         category: "casa",
         image: "ovos.png"
     },
     {
         id: 5,
         title: "Maracujina para os noivos",
-        description: "Um estoque de maracujá para os momentos de estresse",
-        price: 128.87,
+        description: "Basta um gole pra relevar a toalha molhada em cima da cama.",
+        price: 125,
         category: "cha-casa-nova",
         image: "maracuja.png"
     },
     {
         id: 6,
-        title: "Tampão de ouvido anti ronco",
-        description: "Para garantir uma boa noite de sono para ambos",
-        price: 154.64,
+        title: "Tampão de ouvido anti-ronco",
+        description: "Manual de sobrevivência em casamento: item 1.",
+        price: 150,
         category: "casa",
         image: "tampao.png"
     },
     {
         id: 7,
         title: "Rolo p/ noivo malcriado",
-        description: "Um rolo de macarrão para manter a ordem na cozinha",
-        price: 180.41,
+        description: "Serve pra abrir massa ou corrigir atitudes.",
+        price: 175,
         category: "casa",
         image: "rolo.png"
     },
     {
         id: 8,
         title: "Capacete anti-rolo de macarrão",
-        description: "Proteção essencial para o noivo na cozinha",
-        price: 206.19,
+        description: "Item de proteção homologado pelo ministério da paz conjugal.",
+        price: 200,
         category: "casa",
         image: "capacete.png"
     },
     {
         id: 9,
         title: "Conjunto controle democrático",
-        description: "Dois controles remotos para evitar brigas na TV",
-        price: 231.06,
+        description: "Dois controles remotos para evitar brigas na TV.",
+        price: 225,
         category: "casa",
         image: "controles.png"
     },
     {
         id: 10,
         title: "Taxa de buquê teleguiado",
-        description: "Para garantir que o buquê chegue nas mãos certas",
-        price: 297.73,
+        description: "Pequeno suborno social para evitar climão no evento.",
+        price: 250,
         category: "experiencias",
         image: "buque.png"
     },
     {
         id: 11,
         title: "Garanta o jantar do 1º mês",
-        description: "Ajuda com as despesas de alimentação do primeiro mês de casados",
-        price: 281.80,
+        description: "Plano de sobrevivência alimentar pós-casamento. Sem culpa!",
+        price: 275,
         category: "casa",
         image: "lanche.png"
     },
     {
         id: 12,
         title: "Receitas de macarrão instantâneo",
-        description: "Um livro de receitas para os dias preguiçosos",
-        price: 209.20,
+        description: "O primeiro livro de gastronomia do casal raiz.",
+        price: 300,
         category: "casa",
         image: "lamem.png"
     },
     {
         id: 13,
         title: "Novos filhos p/ pais de planta",
-        description: "Plantas para começar nossa família verde",
-        price: 85.06,
+        description: "Filhos que não choram de madrugada, mas às vezes morrem desidratados.",
+        price: 325,
         category: "casa",
         image: "plantas.png"
     },
     {
         id: 14,
         title: "5 meses de streaming",
-        description: "Para maratonar séries juntos nos fins de semana",
-        price: 360.82,
+        description: "Plano premium de maratona com pipoca e discussão sobre qual série ver.",
+        price: 350,
         category: "experiencias",
         image: "streaming.png"
     },
     {
         id: 15,
-        title: "Acordar c' cheirinho de café",
-        description: "Uma máquina de café para começar os dias com energia",
-        price: 388.60,
+        title: "Acordar c/ cheirinho de café",
+        description: "Porque café na cama é amor. Café passado às 6h da manhã…",
+        price: 375,
         category: "casa",
         image: "café.png"
     },
     {
         id: 16,
         title: "Passeio p/ observar aves exóticas",
-        description: "Uma experiência única para observarmos pássaros juntos",
-        price: 412.87,
+        description: "Inclui a experiência de ver o noivo tentando diferenciar pombo de arara.",
+        price: 400,
         category: "experiencias",
         image: "aves.png"
     },
     {
         id: 17,
         title: "Frigobar assaltável",
-        description: "Um frigobar cheio de guloseimas para os ataques de fome",
-        price: 438.14,
+        description: "Casamento bom é quando você já sabe que vai dividir até o chocolate escondido.",
+        price: 425,
         category: "casa",
         image: "frigo.png"
     },
     {
         id: 18,
         title: "1ª compra no mercado",
-        description: "Ajuda com a primeira compra de mantimentos para nossa casa",
-        price: 463.92,
+        description: "Ajuda com a primeira compra de mantimentos para nossa casa.",
+        price: 450,
         category: "casa",
         image: "mercado.png"
     },
     {
         id: 19,
         title: "Cota restaurantes de luxo",
-        description: "Para celebrar momentos especiais em restaurantes finos",
-        price: 489.69,
+        description: "Pra comer como reis antes de voltar pra marmita do dia a dia.",
+        price: 475,
         category: "experiencias",
         image: "mc.png"
     },
     {
         id: 20,
         title: "Poltrona p/ esperar a noiva",
-        description: "Uma poltrona confortável para os momentos de espera",
-        price: 515.46,
+        description: "Tempo estimado de espera: 7 dias úteis. Poltrona inclusa.",
+        price: 500,
         category: "casa",
         image: "tenda.png"
     },
     {
         id: 21,
-        title: "Coral de 'Aleluia' p/ noivos",
-        description: "Para celebrar nossa união com música celestial",
-        price: 541.24,
+        title: "Coral de 'Aleluia' p/ noivo",
+        description: "Porque todo mundo merece seu momento épico… nem que seja no chuveiro.",
+        price: 525,
         category: "experiencias",
         image: "coral.png"
     },
     {
         id: 22,
         title: "Adote os primeiros boletos",
-        description: "Ajuda com as primeiras contas da casa nova",
-        price: 567.01,
+        description: "Porque a vida a dois começa no amor… e continua no débito automático.",
+        price: 550,
         category: "casa",
         image: "conta.png"
     },
     {
         id: 23,
         title: "1 ano de barba feita p/ noivo",
-        description: "Para manter o noivo sempre bem apresentável",
-        price: 592.78,
+        description: "Porque nem todo amor resiste a um cacto facial descontrolado.",
+        price: 575,
         category: "cha-casa-nova",
         image: "barba.png"
     },
     {
         id: 24,
-        title: "1 ano norte de cabelo p/ noiva",
-        description: "Para manter a noiva sempre linda e arrumada",
-        price: 618.55,
+        title: "1 ano corte de cabelo p/ noiva",
+        description: "Casamento passa, cabelo cresce. E não dá pra cortar em casa.",
+        price: 600,
         category: "cha-casa-nova",
         image: "cabelo.png"
     },
     {
         id: 25,
         title: "Ajuda para pagar o Trump",
-        description: "Contribuição para as despesas do casamento",
-        price: 644.33,
+        description: "Ajude os noivos a comprar dólar para gastar tudo em bugiganga e voltar da viagem com lembrancinha de geladeira.",
+        price: 625,
         category: "experiencias",
         image: "tax.png"
     },
     {
         id: 26,
         title: "Ajuda para mobiliar a casa",
-        description: "Contribuição para comprar móveis para nossa casa nova",
-        price: 670.10,
+        description: "Do colchão pro sofá, do sofá pra cama… móveis: todos precisamos.",
+        price: 650,
         category: "casa",
         image: "moveis.png"
     },
     {
         id: 27,
         title: "Contribuição hotel 5 estrelas",
-        description: "Para nossa lua de mel em um hotel de luxo",
-        price: 695.88,
+        description: "Porque perrengue a dois só se for no acampamento do ano.",
+        price: 675,
         category: "experiencias",
         image: "spa.png"
     },
     {
         id: 28,
         title: "Aposente os noivos",
-        description: "Contribuição para nossa aposentadoria futura",
-        price: 721.65,
+        description: "Começar a planejar hoje pra poder reclamar do INSS amanhã.",
+        price: 700,
         category: "experiencias",
         image: "aposentadoria.png"
     },
     {
         id: 29,
-        title: "Engorde a porquinha de vidro duro",
-        description: "Contribuição para nossa reserva de emergência",
-        price: 747.42,
+        title: "Engorde o porquinho de vidro duro",
+        description: "Pra quando o ‘futuro’ chegar e bater na porta pedindo parcelamento.",
+        price: 725,
         category: "casa",
         image: "porquinho.png"
     },
     {
         id: 30,
         title: "Contribuição para a reforma infinita",
-        description: "Para as futuras reformas da casa que sempre aparecem",
-        price: 773.20,
+        description: "Toda casa precisa de reforma. Toda reforma precisa de casa.",
+        price: 750,
         category: "casa",
         image: "reforma.png"
     }
