@@ -126,7 +126,7 @@ body {
 /* Gifts Grid */
 .gifts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     margin-bottom: 60px;
 }
@@ -142,6 +142,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
 }
 
 .gift-card:hover {
@@ -304,6 +305,7 @@ body {
     }
     
     .gift-card {
+        width: 100%;
         max-width: 400px;
         margin: 0 auto;
     }
