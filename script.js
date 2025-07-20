@@ -368,6 +368,7 @@ function renderGifts() {
 function createGiftCard(gift) {
     const card = document.createElement('div');
     card.className = 'gift-card';
+    card.dataset.giftId = gift.id;
     
     // Format price
     let formattedPrice;
@@ -401,6 +402,13 @@ function createGiftCard(gift) {
             </a>
         </div>
     `;
+    
+    // Add click event listener to open modal (but not on the buy button)
+    card.addEventListener('click', function(e) {
+        if (!e.target.closest('.gift-link')) {
+            openModal(gift);
+        }
+    });
     
     return card;
 }
@@ -441,6 +449,27 @@ function setupEventListeners() {
             currentSort = button.dataset.sort;
             renderGifts();
         });
+    });
+    
+    // Modal event listeners
+    const modal = document.getElementById('gift-modal');
+    const modalClose = document.getElementById('modal-close');
+    
+    // Close modal when clicking the close button
+    modalClose.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside the modal content
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
     });
 }
 
@@ -487,4 +516,62 @@ document.addEventListener('click', function(e) {
             card.style.transform = '';
         }, 150);
     }
-}); 
+});
+
+// Modal functions
+function openModal(gift) {
+    const modal = document.getElementById('gift-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalImage = document.getElementById('modal-image');
+    const modalDescription = document.getElementById('modal-description');
+    const modalPrice = document.getElementById('modal-price');
+    const modalCategory = document.getElementById('modal-category');
+    const modalBuyButton = document.getElementById('modal-buy-button');
+    
+    // Format price
+    let formattedPrice;
+    if (typeof gift.price === 'number') {
+        formattedPrice = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(gift.price);
+    } else {
+        formattedPrice = gift.price; // Use the string as is
+    }
+    
+    // Check if image is a file (has extension) or emoji
+    const isImageFile = gift.image.includes('.') || gift.image.includes('/');
+    
+    // Update modal content
+    modalTitle.textContent = gift.title;
+    modalDescription.textContent = gift.description;
+    modalPrice.textContent = formattedPrice;
+    modalCategory.textContent = getCategoryName(gift.category);
+    modalBuyButton.href = PAYMENT_LINK;
+    
+    // Set image
+    if (isImageFile) {
+        modalImage.src = `images/${gift.image}`;
+        modalImage.alt = gift.title;
+        modalImage.style.display = 'block';
+    } else {
+        // For emoji gifts, create a styled container
+        modalImage.style.display = 'none';
+        const imageContainer = modalImage.parentElement;
+        imageContainer.innerHTML = `
+            <div class="modal-emoji-container">
+                <span class="modal-emoji">${gift.image}</span>
+            </div>
+        `;
+    }
+    
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeModal() {
+    const modal = document.getElementById('gift-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // Restore scrolling
+} 
