@@ -892,11 +892,15 @@ body {
     color: inherit;
     transition: all 0.3s ease;
     display: block;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: -8px -12px;
 }
 
 .address-link:hover {
     color: #73995C;
     transform: translateY(-1px);
+    background-color: rgba(115, 153, 92, 0.1);
 }
 
 .address-line {
