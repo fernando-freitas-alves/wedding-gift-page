@@ -7,6 +7,9 @@
     "build": "node build.js",
     "dev": "node build.js && echo 'Build completed for development'"
   },
+  "dependencies": {
+    "@vercel/kv": "^1.0.0"
+  },
   "keywords": [
     "wedding",
     "gifts",

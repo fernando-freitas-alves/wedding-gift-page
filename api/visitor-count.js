@@ -1,7 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-
-const COUNT_FILE = path.join(process.cwd(), 'visitor-count.json');
+import { kv } from '@vercel/kv';
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -16,46 +13,14 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === 'GET') {
-      // Read current count
-      let count = 48; // Default starting count
-      
-      try {
-        if (fs.existsSync(COUNT_FILE)) {
-          const data = fs.readFileSync(COUNT_FILE, 'utf8');
-          const parsed = JSON.parse(data);
-          count = parsed.count || 48;
-        }
-      } catch (error) {
-        console.error('Error reading count file:', error);
-      }
-
+      // Read current count from KV store
+      let count = await kv.get('visitor-count') || 48;
       res.status(200).json({ count });
     } 
     else if (req.method === 'POST') {
-      // Increment count
-      let count = 48;
-      
-      try {
-        if (fs.existsSync(COUNT_FILE)) {
-          const data = fs.readFileSync(COUNT_FILE, 'utf8');
-          const parsed = JSON.parse(data);
-          count = parsed.count || 48;
-        }
-      } catch (error) {
-        console.error('Error reading count file:', error);
-      }
-
-      // Increment count
-      count += Math.floor(Math.random() * 3) + 1; // Add 1-3 visitors
-
-      // Save updated count
-      try {
-        fs.writeFileSync(COUNT_FILE, JSON.stringify({ count, lastUpdated: new Date().toISOString() }));
-      } catch (error) {
-        console.error('Error writing count file:', error);
-      }
-
-      res.status(200).json({ count });
+      // Increment count using atomic operation
+      const newCount = await kv.incrby('visitor-count', Math.floor(Math.random() * 3) + 1);
+      res.status(200).json({ count: newCount });
     }
     else {
       res.status(405).json({ error: 'Method not allowed' });
