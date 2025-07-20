@@ -5,7 +5,7 @@ const gifts = [
         title: "Chá para aguentar a ansiedade",
         description: "Serve pra acalmar o coração, ou pelo menos esquentar a mão enquanto espera o cerimonial.",
         price: 25,
-        category: "cha-casa-nova",
+        category: "preparacao",
         image: "cha.png"
     },
     {
@@ -13,7 +13,7 @@ const gifts = [
         title: "Torne o doguinho realidade",
         description: "Ele ainda vai ser da família… e já começou a dar despesa.",
         price: 50,
-        category: "casa",
+        category: "casa-nova",
         image: "dogo.png"
     },
     {
@@ -21,15 +21,15 @@ const gifts = [
         title: "Lenço salva-maquiagem",
         description: "Lágrimas liberadas! Só não vale escorrer rímel até o queixo.",
         price: 75,
-        category: "cha-casa-nova",
+        category: "preparacao",
         image: "choro.png"
     },
     {
         id: 4,
         title: "Apoio para comer mais saudável",
-        description: "Porque dizer ‘vamos pedir pizza hoje?’ também é carinho, mas tem limite.",
+        description: "Porque dizer 'vamos pedir pizza hoje?' também é carinho, mas tem limite.",
         price: 100,
-        category: "casa",
+        category: "casa-nova",
         image: "ovos.png"
     },
     {
@@ -37,7 +37,7 @@ const gifts = [
         title: "Maracujina para os noivos",
         description: "Basta um gole pra relevar a toalha molhada em cima da cama.",
         price: 125,
-        category: "cha-casa-nova",
+        category: "preparacao",
         image: "maracuja.png"
     },
     {
@@ -45,7 +45,7 @@ const gifts = [
         title: "Tampão de ouvido anti-ronco",
         description: "Manual de sobrevivência em casamento: item 1.",
         price: 150,
-        category: "casa",
+        category: "casa-nova",
         image: "tampao.png"
     },
     {
@@ -53,7 +53,7 @@ const gifts = [
         title: "Rolo p/ noivo malcriado",
         description: "Serve pra abrir massa ou corrigir atitudes.",
         price: 175,
-        category: "casa",
+        category: "casa-nova",
         image: "rolo.png"
     },
     {
@@ -61,7 +61,7 @@ const gifts = [
         title: "Capacete anti-rolo de macarrão",
         description: "Item de proteção homologado pelo ministério da paz conjugal.",
         price: 200,
-        category: "casa",
+        category: "casa-nova",
         image: "capacete.png"
     },
     {
@@ -69,7 +69,7 @@ const gifts = [
         title: "Conjunto controle democrático",
         description: "Dois controles remotos para evitar brigas na TV.",
         price: 225,
-        category: "casa",
+        category: "casa-nova",
         image: "controles.png"
     },
     {
@@ -77,7 +77,7 @@ const gifts = [
         title: "Taxa de buquê teleguiado",
         description: "Pequeno suborno social para evitar climão no evento.",
         price: 250,
-        category: "experiencias",
+        category: "preparacao",
         image: "buque.png"
     },
     {
@@ -85,7 +85,7 @@ const gifts = [
         title: "Garanta o jantar do 1º mês",
         description: "Plano de sobrevivência alimentar pós-casamento. Sem culpa!",
         price: 275,
-        category: "casa",
+        category: "casa-nova",
         image: "lanche.png"
     },
     {
@@ -93,7 +93,7 @@ const gifts = [
         title: "Receitas de macarrão instantâneo",
         description: "O primeiro livro de gastronomia do casal raiz.",
         price: 300,
-        category: "casa",
+        category: "casa-nova",
         image: "lamem.png"
     },
     {
@@ -101,7 +101,7 @@ const gifts = [
         title: "Novos filhos p/ pais de planta",
         description: "Filhos que não choram de madrugada, mas às vezes morrem desidratados.",
         price: 325,
-        category: "casa",
+        category: "casa-nova",
         image: "plantas.png"
     },
     {
@@ -109,7 +109,7 @@ const gifts = [
         title: "5 meses de streaming",
         description: "Plano premium de maratona com pipoca e discussão sobre qual série ver.",
         price: 350,
-        category: "experiencias",
+        category: "casa-nova",
         image: "streaming.png"
     },
     {
@@ -117,7 +117,7 @@ const gifts = [
         title: "Acordar c/ cheirinho de café",
         description: "Porque café na cama é amor. Café passado às 6h da manhã…",
         price: 375,
-        category: "casa",
+        category: "casa-nova",
         image: "café.png"
     },
     {
@@ -125,7 +125,7 @@ const gifts = [
         title: "Passeio p/ observar aves exóticas",
         description: "Inclui a experiência de ver o noivo tentando diferenciar pombo de arara.",
         price: 400,
-        category: "experiencias",
+        category: "lua-de-mel",
         image: "aves.png"
     },
     {
@@ -133,7 +133,7 @@ const gifts = [
         title: "Frigobar assaltável",
         description: "Casamento bom é quando você já sabe que vai dividir até o chocolate escondido.",
         price: 425,
-        category: "casa",
+        category: "casa-nova",
         image: "frigo.png"
     },
     {
@@ -141,7 +141,7 @@ const gifts = [
         title: "1ª compra no mercado",
         description: "Ajuda com a primeira compra de mantimentos para nossa casa.",
         price: 450,
-        category: "casa",
+        category: "casa-nova",
         image: "mercado.png"
     },
     {
@@ -149,7 +149,7 @@ const gifts = [
         title: "Cota restaurantes de luxo",
         description: "Pra comer como reis antes de voltar pra marmita do dia a dia.",
         price: 475,
-        category: "experiencias",
+        category: "lua-de-mel",
         image: "mc.png"
     },
     {
@@ -157,7 +157,7 @@ const gifts = [
         title: "Poltrona p/ esperar a noiva",
         description: "Tempo estimado de espera: 7 dias úteis. Poltrona inclusa.",
         price: 500,
-        category: "casa",
+        category: "casa-nova",
         image: "tenda.png"
     },
     {
@@ -165,7 +165,7 @@ const gifts = [
         title: "Coral de 'Aleluia' p/ noivo",
         description: "Porque todo mundo merece seu momento épico… nem que seja no chuveiro.",
         price: 525,
-        category: "experiencias",
+        category: "preparacao",
         image: "coral.png"
     },
     {
@@ -173,7 +173,7 @@ const gifts = [
         title: "Adote os primeiros boletos",
         description: "Porque a vida a dois começa no amor… e continua no débito automático.",
         price: 550,
-        category: "casa",
+        category: "casa-nova",
         image: "conta.png"
     },
     {
@@ -181,7 +181,7 @@ const gifts = [
         title: "1 ano de barba feita p/ noivo",
         description: "Porque nem todo amor resiste a um cacto facial descontrolado.",
         price: 575,
-        category: "cha-casa-nova",
+        category: "preparacao",
         image: "barba.png"
     },
     {
@@ -189,7 +189,7 @@ const gifts = [
         title: "1 ano corte de cabelo p/ noiva",
         description: "Casamento passa, cabelo cresce. E não dá pra cortar em casa.",
         price: 600,
-        category: "cha-casa-nova",
+        category: "preparacao",
         image: "cabelo.png"
     },
     {
@@ -197,7 +197,7 @@ const gifts = [
         title: "Ajuda para pagar o Trump",
         description: "Ajude os noivos a comprar dólar para gastar tudo em bugiganga e voltar da viagem com lembrancinha de geladeira.",
         price: 625,
-        category: "experiencias",
+        category: "lua-de-mel",
         image: "tax.png"
     },
     {
@@ -205,7 +205,7 @@ const gifts = [
         title: "Ajuda para mobiliar a casa",
         description: "Do colchão pro sofá, do sofá pra cama… móveis: todos precisamos.",
         price: 650,
-        category: "casa",
+        category: "casa-nova",
         image: "moveis.png"
     },
     {
@@ -213,7 +213,7 @@ const gifts = [
         title: "Contribuição hotel 5 estrelas",
         description: "Porque perrengue a dois só se for no acampamento do ano.",
         price: 675,
-        category: "experiencias",
+        category: "lua-de-mel",
         image: "spa.png"
     },
     {
@@ -221,7 +221,7 @@ const gifts = [
         title: "Aposente os noivos",
         description: "Começar a planejar hoje pra poder reclamar do INSS amanhã.",
         price: 700,
-        category: "experiencias",
+        category: "casa-nova",
         image: "aposentadoria.png"
     },
     {
@@ -229,15 +229,15 @@ const gifts = [
         title: "Contribuição para a reforma infinita",
         description: "Toda casa precisa de reforma. Toda reforma precisa de casa.",
         price: 725,
-        category: "casa",
+        category: "casa-nova",
         image: "reforma.png"
     },
     {
         id: 30,
         title: "Engorde o porquinho de vidro duro",
-        description: "Pra quando o ‘futuro’ chegar e bater na porta pedindo parcelamento.",
+        description: "Pra quando o 'futuro' chegar e bater na porta pedindo parcelamento.",
         price: "R$ Você decide",
-        category: "casa",
+        category: "casa-nova",
         image: "porquinho.png"
     }
 ];
@@ -408,9 +408,9 @@ function createGiftCard(gift) {
 // Get category display name
 function getCategoryName(category) {
     const categories = {
-        'cha-casa-nova': 'Chá de Casa Nova',
-        'casa': 'Casa',
-        'experiencias': 'Experiências'
+        'preparacao': 'Preparação para o casamento',
+        'lua-de-mel': 'Lua de mel',
+        'casa-nova': 'Casa nova'
     };
     return categories[category] || category;
 }
