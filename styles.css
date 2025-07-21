@@ -351,6 +351,7 @@ body {
     text-align: center;
     padding: 40px 0;
     border-top: 1px solid #E6D9C2;
+    background: linear-gradient(135deg, #F3F8F2 0%, #EAF6EA 100%);
 }
 
 .visitor-counter {
