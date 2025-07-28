@@ -16,7 +16,7 @@
     forced-color-adjust: none;
   }
   
-  .garden-background-section {
+  .background-section {
     position: relative;
     min-width: 100vw;
     opacity: 0;
@@ -24,20 +24,20 @@
     overflow: hidden;
   }
   
-  .garden-background-section::before {
+  .background-section::before {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("images/garden.png") center center / cover no-repeat;
+    background: url("images/chacara-da-villa.png") center center / cover no-repeat;
     z-index: -3;
     will-change: transform;
   }
   
   /* Blurred background layer - fades in */
-  .garden-background-section::after {
+  .background-section::after {
     content: "";
     position: absolute;
     top: 0;
@@ -61,12 +61,12 @@
     }
   }
   
-  .garden-background-section.invitation-loaded::after {
+  .background-section.invitation-loaded::after {
     opacity: 1;
   }
   
   /* Overlay layer - fades in */
-  .garden-background-section .overlay {
+  .background-section .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -79,7 +79,7 @@
     pointer-events: none;
   }
   
-  .garden-background-section.invitation-loaded .overlay {
+  .background-section.invitation-loaded .overlay {
     opacity: 0.5;
   }
   
@@ -110,10 +110,10 @@
     }
   }
   
-  .garden-background-section.invitation-loaded::after {
+  .background-section.invitation-loaded::after {
     opacity: 1;
   }
-  .garden-background-section.invitation-loaded .overlay {
+  .background-section.invitation-loaded .overlay {
     opacity: 0.01;
   }
   
@@ -130,7 +130,7 @@
   }
   
   .countdown-banner {
-    background: linear-gradient(135deg, #aab296 0%, #73995c 100%);
+    background: linear-gradient(135deg, #E2AAAB 0%, #d77a7b 100%);
     color: white;
     padding: 15px 30px;
     border-radius: 50px;
@@ -146,7 +146,7 @@
     max-width: 1800px;
     margin: 0 auto;
     width: 100%;
-    background-color: #f5f8ed;
+    background-color: #ffffff;
     position: relative;
     z-index: 1;
   }
@@ -199,7 +199,7 @@
     padding: 8px 16px;
     border: 2px solid #e6d9c2;
     background: white;
-    color: #8c8273;
+    color: #ca8889;
     border-radius: 25px;
     cursor: pointer;
     font-size: 0.9rem;
@@ -209,14 +209,14 @@
   
   .filter-btn:hover,
   .sort-btn:hover {
-    border-color: #73995c;
-    color: #73995c;
+    border-color: #b77576;
+    color: #c48384;
   }
   
   .filter-btn.active,
   .sort-btn.active {
-    background: #73995c;
-    border-color: #73995c;
+    background: #E2AAAB;
+    border-color: #ca8889;
     color: white;
   }
   
@@ -332,14 +332,14 @@
   .gift-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #73995c;
+    color: #c38e8f;
     margin-bottom: 20px;
     margin-top: auto;
   }
   
   .gift-link {
     display: inline-block;
-    background: linear-gradient(135deg, #aab296 0%, #73995c 100%);
+    background: linear-gradient(135deg, #E2AAAB 0%, #d77a7b 100%);
     color: white;
     padding: 12px 25px;
     border-radius: 25px;
@@ -360,8 +360,8 @@
   .footer {
     text-align: center;
     padding: 40px 0;
-    border-top: 1px solid #e6d9c2;
-    background: linear-gradient(135deg, #f3f8f2 0%, #eaf6ea 100%);
+    border-top: 1px solid #c38e8f;
+    background: linear-gradient(135deg, #ede2e2 0%, #eacbcb 100%);
   }
   
   .visitor-counter {
@@ -369,7 +369,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: #8c8273;
+    color: #c38e8f;
     font-size: 0.9rem;
     min-height: 1.2em;
   }
@@ -384,7 +384,7 @@
   }
   
   .visitor-counter i {
-    color: #73995c;
+    color: #b67577;
     animation: heartbeat 2s infinite;
   }
   
@@ -504,28 +504,40 @@
   
     .celebration-text {
       font-size: 1.1rem;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
     }
   
-    .date-time,
-    .venue {
-      font-size: 1.1rem;
+    .day-date {
+      font-size: 1.2rem;
+      letter-spacing: 0.8px;
+    }
+
+    .date-left,
+    .date-right {
+      font-size: 1rem;
+    }
+
+    .date-center {
+      font-size: 2.5rem;
+    }
+
+    .venue-name {
+      font-size: 1.2rem;
       letter-spacing: 0.8px;
     }
   
     .address-line {
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
-  
+
+    .dress-code {
+      font-size: 0.9rem;
+    }
+
     .inv-btn {
       padding: 10px 20px;
       font-size: 0.9rem;
       min-width: 80px;
-    }
-  
-    .rsvp-instructions {
-      font-size: 0.7rem;
-      max-width: 350px;
     }
   }
   
@@ -572,37 +584,49 @@
   
     .celebration-text {
       font-size: 1rem;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
   
-    .date-time,
-    .venue {
-      font-size: 1rem;
+    .day-date {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .date-left,
+    .date-right {
+      font-size: 0.95rem;
+    }
+
+    .date-center {
+      font-size: 2.2rem;
+    }
+
+    .date-container {
+      gap: 15px;
+    }
+
+    .venue-name {
+      font-size: 1.1rem;
       letter-spacing: 0.5px;
     }
   
     .address-line {
       font-size: 0.9rem;
     }
-  
+
+    .dress-code {
+      font-size: 0.85rem;
+    }
+
     .invitation-buttons {
       gap: 15px;
-      margin: 25px 0;
+      margin: 20px 0 15px 0;
     }
-  
+
     .inv-btn {
       padding: 8px 16px;
       font-size: 0.8rem;
       min-width: 70px;
-    }
-  
-    .rsvp-instructions {
-      font-size: 0.65rem;
-      max-width: 300px;
-    }
-  
-    .separator-image {
-      width: 25px;
     }
   }
   
@@ -642,15 +666,35 @@
       font-size: 0.9rem;
     }
   
-    .date-time,
-    .venue {
-      font-size: 0.9rem;
+    .day-date {
+      font-size: 1rem;
+    }
+
+    .date-left,
+    .date-right {
+      font-size: 0.85rem;
+    }
+
+    .date-center {
+      font-size: 2rem;
+    }
+
+    .date-container {
+      gap: 10px;
+    }
+
+    .venue-name {
+      font-size: 1rem;
     }
   
     .address-line {
       font-size: 0.8rem;
     }
-  
+
+    .dress-code {
+      font-size: 0.8rem;
+    }
+
     .inv-btn {
       padding: 6px 12px;
       font-size: 0.75rem;
@@ -671,9 +715,9 @@
     /* d5a369 */
     background: linear-gradient(
       135deg,
-      rgba(213, 163, 105, 0.75),
-      rgba(213, 163, 105, 0.05),
-      rgba(213, 163, 105, 0.75)
+      rgba(226, 170, 171, 0.75),
+      rgba(226, 170, 171, 0.05),
+      rgba(226, 170, 171, 0.75)
     );
     border-radius: 10px;
     padding: 10px;
@@ -725,7 +769,7 @@
   }
   
   .invitation-content {
-    background-color: #ebf2e5;
+    background-color: #ffffff;
     background-image: url("images/convite-fundo.png");
     background-position: center top;
     background-size: cover;
@@ -762,7 +806,7 @@
     height: 500px;
     max-width: 100%;
     max-height: 100%;
-    margin: 0 auto -45px;
+    margin: 0 auto -120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -813,27 +857,49 @@
   
   .couple-names-frame {
     font-family: "Allura", cursive;
-    font-size: 4.5rem;
+    font-size: 6.5rem;
     color: #4a523a;
     margin: 0;
     font-weight: 400;
     z-index: 2;
     position: relative;
+    line-height: 0.6;
+  }
+
+  .couple-names-frame-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* spacing between lines and & */
+    margin-bottom: 10px;
+  }
+  
+  .couple-names-frame-separator .line {
+    flex: 1;
+    height: 1px;
+    background-color: #3e4632; /* match your text color */
+  }
+  
+  .couple-names-frame-separator .ampersand {
+    font-family: "Allura", cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
     line-height: 0.8;
+    color: #4a523a;
   }
   
   /* Invitation Text */
   .invitation-text-section {
-    margin: 0px 0;
+    margin: 10px 0;
   }
   
   .invite-word {
     font-size: 1.35rem;
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-weight: 0;
     color: #5a6346;
     margin: 0 0 0px 0;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
   
   .family-text {
@@ -874,64 +940,155 @@
     color: #c09355;
     margin: 4px 0;
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-weight: 0;
+    margin-bottom: 15px;
   }
   
   .garamond-text {
     font-family: "EB Garamond", serif;
-    font-weight: 700;
+    font-weight: 0;
     font-style: italic;
     color: #5a6346;
   }
   
   .celebration-text strong {
     color: #4a523a;
-    font-weight: bold;
+    font-weight: regular;
   }
   
   /* Event Details */
   .event-details {
-    margin: 0px 0;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    padding: 8px 12px;
+    margin: 15px 0;
+    text-align: center;
+    position: relative;
   }
-  
-  .event-details:hover {
-    background-color: rgba(115, 153, 92, 0.1);
-    transform: translateY(-1px);
-  }
-  
-  .date-time,
-  .venue {
+
+  .day-date {
     font-size: 1.3rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     color: #5a6346;
-    margin: 2px 0;
+    margin-bottom: 15px;
     letter-spacing: 1px;
-    line-height: 1.3;
+    position: relative;
+    padding-bottom: 10px;
   }
-  
-  /* Decorative Divider */
-  .decorative-divider {
-    margin-top: 10px;
+
+  .day-date::before {
+    left: calc(50% - 100px);
+    width: 75px;
+  }
+
+  .day-date::after {
+    right: calc(50% - 100px);
+    width: 55px;
+  }
+
+  .date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+    position: relative;
+  }
+
+  .date-left,
+  .date-center,
+  .date-right {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #4a523a;
+    letter-spacing: 1px;
+  }
+
+  .date-left,
+  .date-right {
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  .date-right {
+    padding-left: 50px;
+  }
+
+  .date-left::before {
+    content: "";
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 0.01rem;
+    background-color: #3e4632;
+  }
+
+  .date-right::before {
+    content: "";
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-30%);
+    width: 140%;
+    height: 0.01rem;
+    background-color: #3e4632;
+  }
+
+  .date-left::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 0.01rem;
+    background-color: #3e4632;
+  }
+
+  .date-right::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-30%);
+    width: 140%;
+    height: 0.01rem;
+    background-color: #3e4632;
+  }
+
+  .date-center {
+    font-size: 3rem;
+    line-height: 1;
+    margin-left: 20px;
+    margin-right: -10px;
     margin-bottom: 10px;
   }
-  
-  .separator-image {
-    width: 30px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
+
+  .date-container {
+    margin-right: 15px;
+  }
+
+  /* Venue */
+  .venue-section {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .venue-name {
+    font-size: 1.3rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #4a523a;
+    letter-spacing: 1px;
   }
   
   /* Address */
   .address-section {
-    margin: 0px 0;
+    margin: 15px 0;
+    text-align: center;
   }
-  
+
   .address-link {
     text-decoration: none;
     color: inherit;
@@ -949,26 +1106,47 @@
   }
   
   .address-line {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #5a6346;
-    margin: 1px 0;
+    margin: 2px 0;
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .reference {
+    font-size: 0.9rem;
+    font-style: italic;
+    padding-top: 6px;
+    color: #5a6346;
+    margin: 6px 0 0 0;
     font-family: "EB Garamond", serif;
     font-weight: 400;
     line-height: 1.2;
   }
-  
+
   .address-icon {
     font-size: 0.9rem;
     color: #73995c;
     margin-right: 6px;
   }
-  
+
+  /* Dress Code */
+  .dress-code {
+    margin: 20px 0 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    color: #4a523a;
+  }
+
   /* Buttons */
   .invitation-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 35px 0;
+    margin: 25px 0 15px 0;
     flex-wrap: wrap;
   }
   
@@ -986,75 +1164,21 @@
     min-width: 90px;
   }
   
-  .inv-btn.rsvp-btn {
-    background: #d5a369;
-    color: white;
-    border-color: #c09355;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .inv-btn.rsvp-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: var(--shine-x, -100%);
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    background-size: 200% 100%;
-    transition: left 0.1s ease-out;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0;
-  }
-  
-  .inv-btn.rsvp-btn.shine::before {
-    opacity: 1;
-    left: var(--shine-x, 100%);
-  }
-  
-  .inv-btn.rsvp-btn:hover {
-    background: #a67c3f;
-    border-color: #a67c3f;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(192, 147, 85, 0.4);
-  }
-  
   .inv-btn.gifts-btn {
-    background: #d7e6cd;
-    color: #5a6346;
-    border-color: #5a6346;
+    background: rgb(222, 235, 193);
+    color: #646d51;
+    border-color: #757e62;
   }
   
   .inv-btn.gifts-btn:hover {
-    background: #5a6346;
-    border-color: #5a6346;
+    background: rgb(189, 206, 153);
+    border-color: #d3f1dd;
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(90, 99, 70, 0.4);
   }
   
-  /* RSVP Instructions */
-  .rsvp-instructions {
-    font-size: 0.75rem;
-    color: #8c8273;
-    margin-top: 0px;
-    line-height: 1.4;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: "EB Garamond", serif;
-    font-weight: 400;
-  }
+
   
   /* Loading Animation */
   .loading {
@@ -1072,7 +1196,7 @@
     top: 15px;
     right: 15px;
     background: rgba(255, 255, 255, 0.9);
-    color: #73995c;
+    color: #c38e8f;
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -1211,14 +1335,14 @@
   .modal-price {
     font-size: 2rem;
     font-weight: 700;
-    color: #73995c;
+    color: #c38e8f;
     margin: 0;
   }
   
   .modal-category-badge {
     display: inline-block;
-    background: #f5f8ed;
-    color: #73995c;
+    background: #f0eaea;
+    color: #c38e8f;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -1234,7 +1358,7 @@
   
   .modal-buy-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #aab296 0%, #73995c 100%);
+    background: linear-gradient(135deg, #E2AAAB 0%, #d77a7b 100%);
     color: white;
     padding: 15px 40px;
     border-radius: 25px;

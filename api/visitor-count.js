@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     } 
     else if (req.method === 'POST') {
       // Increment count using atomic operation
-      const newCount = await redis.incrby('visitor-count', Math.floor(Math.random() * 3) + 1);
+      const newCount = await redis.incrby('visitor-count-felipe-e-carol-2025', Math.floor(Math.random() * 3) + 1);
       res.status(200).json({ count: newCount });
     }
     else {

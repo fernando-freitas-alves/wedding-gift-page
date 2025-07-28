@@ -48,7 +48,7 @@ const gifts = [
         id: 2,
         title: "Torne o doguinho realidade",
         description: "Ele ainda vai ser da família… e já começou a dar despesa.",
-        price: 50,
+        price: 25,
         category: "casa-nova",
         image: "dogo.png",
     },
@@ -56,7 +56,7 @@ const gifts = [
         id: 3,
         title: "Lenço salva-maquiagem",
         description: "Lágrimas liberadas! Só não vale escorrer rímel até o queixo.",
-        price: 75,
+        price: 25,
         category: "preparacao",
         image: "choro.png",
     },
@@ -64,7 +64,7 @@ const gifts = [
         id: 4,
         title: "Apoio para comer mais saudável",
         description: "Porque dizer 'vamos pedir pizza hoje?' também é carinho, mas tem limite.",
-        price: 100,
+        price: 50,
         category: "casa-nova",
         image: "nuggets.png",
     },
@@ -72,7 +72,7 @@ const gifts = [
         id: 5,
         title: "Maracujina para os noivos",
         description: "Basta um gole pra relevar a toalha molhada em cima da cama.",
-        price: 125,
+        price: 50,
         category: "preparacao",
         image: "maracuja.png",
     },
@@ -80,7 +80,7 @@ const gifts = [
         id: 6,
         title: "Tampão de ouvido anti-ronco",
         description: "Manual de sobrevivência em casamento: item 1.",
-        price: 150,
+        price: 50,
         category: "casa-nova",
         image: "tampao.png",
     },
@@ -88,7 +88,7 @@ const gifts = [
         id: 7,
         title: "Rolo de macarrão anti-noivo malcriado",
         description: "Serve pra abrir massa ou corrigir atitudes.",
-        price: 175,
+        price: 75,
         category: "casa-nova",
         image: "rolo.png",
     },
@@ -96,7 +96,7 @@ const gifts = [
         id: 8,
         title: "Capacete anti-rolo de macarrão",
         description: "Item de proteção homologado pelo ministério da paz conjugal.",
-        price: 200,
+        price: 75,
         category: "casa-nova",
         image: "capacete.png",
     },
@@ -104,7 +104,7 @@ const gifts = [
         id: 9,
         title: "Conjunto controle democrático",
         description: "Dois controles remotos para evitar brigas na TV.",
-        price: 225,
+        price: 75,
         category: "casa-nova",
         image: "controles.png",
     },
@@ -112,7 +112,7 @@ const gifts = [
         id: 10,
         title: "Taxa de buquê teleguiado",
         description: "Pequeno suborno social para evitar climão no evento.",
-        price: 250,
+        price: 100,
         category: "preparacao",
         image: "buque.png",
     },
@@ -120,7 +120,7 @@ const gifts = [
         id: 11,
         title: "Garanta o jantar do 1º mês",
         description: "Plano de sobrevivência alimentar pós-casamento. Sem culpa!",
-        price: 275,
+        price: 100,
         category: "casa-nova",
         image: "lanche.png",
     },
@@ -128,7 +128,7 @@ const gifts = [
         id: 12,
         title: "Receitas de macarrão instantâneo",
         description: "O primeiro livro de gastronomia do casal raiz.",
-        price: 300,
+        price: 100,
         category: "casa-nova",
         image: "lamem.png",
     },
@@ -136,7 +136,7 @@ const gifts = [
         id: 13,
         title: "Novos filhos para pais de plantas",
         description: "Filhos que não choram de madrugada, mas às vezes morrem desidratados.",
-        price: 325,
+        price: 150,
         category: "casa-nova",
         image: "plantas.png",
     },
@@ -144,7 +144,7 @@ const gifts = [
         id: 14,
         title: "5 meses de streaming",
         description: "Plano premium de maratona com pipoca e discussão sobre qual série ver.",
-        price: 350,
+        price: 150,
         category: "casa-nova",
         image: "streaming.png",
     },
@@ -152,7 +152,7 @@ const gifts = [
         id: 15,
         title: "Acordar com cheirinho de café",
         description: "Porque café na cama é amor. Café passado às 6h da manhã…",
-        price: 375,
+        price: 150,
         category: "casa-nova",
         image: "cafe.png",
     },
@@ -160,7 +160,7 @@ const gifts = [
         id: 16,
         title: "Passeio para observar aves exóticas",
         description: "Inclui a experiência de ver o noivo tentando diferenciar pombo de arara.",
-        price: 400,
+        price: 200,
         category: "lua-de-mel",
         image: "aves.png",
     },
@@ -168,7 +168,7 @@ const gifts = [
         id: 17,
         title: "Frigobar assaltável",
         description: "Casamento bom é quando você já sabe que vai dividir até o chocolate escondido.",
-        price: 425,
+        price: 200,
         category: "casa-nova",
         image: "frigo.png",
     },
@@ -176,7 +176,7 @@ const gifts = [
         id: 18,
         title: "1ª compra no mercado",
         description: "Ajuda com a primeira compra de mantimentos para nossa casa.",
-        price: 450,
+        price: 200,
         category: "casa-nova",
         image: "mercado.png",
     },
@@ -184,7 +184,7 @@ const gifts = [
         id: 19,
         title: "Cota restaurantes de luxo",
         description: "Pra comer como reis antes de voltar pra marmita do dia a dia.",
-        price: 475,
+        price: 250,
         category: "lua-de-mel",
         image: "mc.png",
     },
@@ -192,7 +192,7 @@ const gifts = [
         id: 20,
         title: "Poltrona para esperar a noiva",
         description: "Tempo estimado de espera: 7 dias úteis. Poltrona inclusa.",
-        price: 500,
+        price: 250,
         category: "casa-nova",
         image: "rip.png",
     },
@@ -200,7 +200,7 @@ const gifts = [
         id: 21,
         title: "Coral de 'Aleluia' para o noivo",
         description: "Porque todo mundo merece seu momento épico… nem que seja no chuveiro.",
-        price: 525,
+        price: 250,
         category: "preparacao",
         image: "coral.png",
     },
@@ -208,7 +208,7 @@ const gifts = [
         id: 22,
         title: "Adote os primeiros boletos",
         description: "Porque a vida a dois começa no amor… e continua no débito automático.",
-        price: 550,
+        price: 300,
         category: "casa-nova",
         image: "conta.png",
     },
@@ -216,7 +216,7 @@ const gifts = [
         id: 23,
         title: "1 ano de barba feita para o noivo",
         description: "Porque nem todo amor resiste a um cacto facial descontrolado.",
-        price: 575,
+        price: 300,
         category: "preparacao",
         image: "barba.png",
     },
@@ -224,7 +224,7 @@ const gifts = [
         id: 24,
         title: "1 ano corte de cabelo para a noiva",
         description: "Casamento passa, cabelo cresce. E não dá pra cortar em casa.",
-        price: 600,
+        price: 300,
         category: "preparacao",
         image: "cabelo.png",
     },
@@ -232,7 +232,7 @@ const gifts = [
         id: 25,
         title: "Ajudar os noivos a pagar o Trump",
         description: "Ajude os noivos a comprar dólar para gastar tudo em bugiganga e voltar da viagem com lembrancinha de geladeira.",
-        price: 625,
+        price: 500,
         category: "lua-de-mel",
         image: "dolar.png",
     },
@@ -240,7 +240,7 @@ const gifts = [
         id: 26,
         title: "Ajuda para mobiliar a casa",
         description: "Do colchão pro sofá, do sofá pra cama… móveis: todos precisamos.",
-        price: 650,
+        price: 500,
         category: "casa-nova",
         image: "moveis.png",
     },
@@ -248,7 +248,7 @@ const gifts = [
         id: 27,
         title: "Contribuição hotel 5 estrelas",
         description: "Porque perrengue a dois só se for no acampamento do ano.",
-        price: 675,
+        price: 500,
         category: "lua-de-mel",
         image: "tenda.png",
     },
@@ -256,7 +256,7 @@ const gifts = [
         id: 28,
         title: "Contribuição para a reforma infinita",
         description: "Toda casa precisa de reforma. Toda reforma precisa de casa.",
-        price: 700,
+        price: 750,
         category: "casa-nova",
         image: "reforma.png",
     },
@@ -264,7 +264,7 @@ const gifts = [
         id: 29,
         title: "Ajuda para aposentadoria dos noivos",
         description: "Começar a planejar hoje pra poder reclamar do INSS amanhã.",
-        price: 725,
+        price: 750,
         category: "casa-nova",
         image: "aposentadoria.png",
     },
@@ -279,7 +279,7 @@ const gifts = [
 ];
 
 // Wedding date - Easy to change
-const WEDDING_DATE = new Date('2025-11-23T00:00:00');
+const WEDDING_DATE = new Date('2025-09-27T00:00:00');
 
 // Global variables
 let currentFilter = 'all';
@@ -631,11 +631,11 @@ window.addEventListener('load', function() {
     document.body.classList.add('loaded');
     setupInvitationCard3D();
     
-    // Add blur and dimming effect to garden background when invitation starts to appear
+    // Add blur and dimming effect to background when invitation starts to appear
     setTimeout(() => {
-        const gardenBackground = document.getElementById('garden-background');
-        if (gardenBackground) {
-            gardenBackground.classList.add('invitation-loaded');
+        const background = document.getElementById('background');
+        if (background) {
+            background.classList.add('invitation-loaded');
         }
     }, 1000); // 1 second to match when invitation animation starts
 });
@@ -712,7 +712,7 @@ function closeModal() {
 // Invitation button functions
 function openMap() {
     // Open Google Maps with the venue address
-    const address = encodeURIComponent('Rod. Eng. Cândido do Rego Chaves – Jardim Piata A, Mogi das Cruzes, SP');
+    const address = encodeURIComponent('Estrada Martim Afonso de Souza, 1825 – Vila Balnearia, São Bernardo do Campo, SP – 09822-250');
     window.open(`https://maps.google.com/?q=${address}`, '_blank');
 }
 
@@ -735,6 +735,8 @@ function scrollToGifts() {
         block: 'start'
     });
 }
+
+
 
 // Apple TV-style mouse and touch following 3D effect with dynamic shine
 function setupInvitationCard3D() {
