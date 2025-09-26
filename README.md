@@ -1,4 +1,4 @@
-# Lista de Presentes - Fernando & Flavia
+# Wedding Gift Page
 
 A beautiful wedding gift list website with personalized invitations.
 
